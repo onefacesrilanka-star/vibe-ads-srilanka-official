@@ -1,0 +1,2249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="Cinematic AI advertisements, AI presenter videos and product commercials by VIBE ADS Sri Lanka.">
+  <title>VIBE ADS — Make Your Brand Impossible to Ignore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --bg: #09090b;
+      --panel: #121216;
+      --panel2: #18181e;
+      --line: rgba(255, 255, 255, .11);
+      --text: #f8f8fa;
+      --muted: #a6a6b1;
+      --orange: #ff781f;
+      --orange2: #ffab52;
+      --green: #25d366;
+      --max: 1180px;
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 80% -10%, rgba(255, 120, 31, .12), transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', 'Noto Sans Sinhala', 'Noto Sans Tamil', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      color: var(--orange2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow:before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 5px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Manrope, 'Noto Sans Sinhala', 'Noto Sans Tamil', sans-serif;
+      line-height: 1.18;
+      margin: 0;
+      letter-spacing: -.025em;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-head .eyebrow {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 13px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange), #ff9b39);
+      color: #1a0c04;
+      box-shadow: 0 9px 30px #ff781f22;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.07);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      background: #ffffff08;
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: #ff781f99;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #09090be8;
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: Manrope, sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand span {
+      color: var(--orange);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: #d6d6dc;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .navlinks a:hover {
+      color: var(--orange2);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .hero {
+      padding: 70px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(38px, 5.6vw, 68px);
+      max-width: 720px;
+      margin: 17px 0 22px;
+    }
+
+    .hero-copy h1 span {
+      color: var(--orange);
+      text-shadow: 0 0 45px #ff781f30;
+    }
+
+    .hero-copy > p {
+      max-width: 590px;
+      color: #b9b9c3;
+      font-size: 17px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0 26px;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: #c7c7cf;
+      font-size: 13px;
+    }
+
+    .hero-note i {
+      color: var(--orange2);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 440px;
+      border: 1px solid #ffffff17;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #242126, #111114 65%);
+      padding: 13px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px #0008;
+    }
+
+    .hero-visual:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 20%, #ff781f33, transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 412px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 18px;
+      display: block;
+      opacity: .9;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      right: 28px;
+      padding: 16px 18px;
+      border: 1px solid #ffffff27;
+      border-radius: 16px;
+      background: #0b0b0ddf;
+      backdrop-filter: blur(15px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+    }
+
+    .floating-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #ff781f20;
+      color: var(--orange2);
+      font-size: 19px;
+      flex-shrink: 0;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      color: #d0d0d7;
+      font-size: 12px;
+    }
+
+    .trust-row span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-row i {
+      color: var(--orange2);
+    }
+
+    .pillars {
+      padding: 22px 0 30px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 10px 12px;
+    }
+
+    .pillar i {
+      font-size: 20px;
+      color: var(--orange2);
+    }
+
+    .pillar strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .pillar small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .work-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+
+    .work-media {
+      position: relative;
+      display: grid;
+      place-items: center;
+      background: #050506;
+      padding: 10px;
+      min-height: 230px;
+    }
+
+    .work-media video {
+      display: block;
+      max-width: 100%;
+      max-height: 440px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .work-media.vertical video {
+      height: 360px;
+      width: auto;
+      max-width: 100%;
+      aspect-ratio: 9/16;
+    }
+
+    .work-media.landscape video {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+
+    .work-info {
+      padding: 16px 17px;
+    }
+
+    .work-info strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .work-info small {
+      color: var(--muted);
+    }
+
+    .ratio-label {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: #ddd;
+      margin-top: 9px;
+    }
+
+    .pricing-section {
+      background: linear-gradient(180deg, transparent, #ffffff03, transparent);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 21px 21px;
+      background: linear-gradient(160deg, #17171c, #101013);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      min-width: 0;
+      transition: transform .22s, border-color .22s, box-shadow .22s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: #ff781f80;
+    }
+
+    .price-card.pro {
+      border-color: #ff781fbb;
+      box-shadow: 0 0 0 1px #ff781f22, 0 22px 70px #ff781f12;
+      background: radial-gradient(circle at 100% 0%, #ff781f18, transparent 42%), linear-gradient(160deg, #1c1918, #101013);
+    }
+
+    .price-card.cinema {
+      border-color: #ffb35e;
+      box-shadow: 0 0 0 1px #ffb35e25, 0 25px 80px #ff781f20;
+      background: radial-gradient(circle at 70% 0%, #ff781f29, transparent 45%), linear-gradient(155deg, #211811, #111013);
+    }
+
+    .plan-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      border-radius: 100px;
+      padding: 5px 12px;
+      background: var(--orange);
+      color: #190b02;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .cinema .plan-ribbon {
+      background: linear-gradient(90deg, #ffd08a, #ff8b27);
+    }
+
+    .plan-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .plan-code {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .14em;
+      font-weight: 800;
+    }
+
+    .plan-icon {
+      width: 39px;
+      height: 39px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: #ffffff09;
+      color: var(--orange2);
+    }
+
+    .price-card h3 {
+      font-size: 23px;
+      letter-spacing: -.04em;
+    }
+
+    .plan-desc {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 40px;
+      margin-top: 9px;
+    }
+
+    .price-block {
+      padding: 19px 0 17px;
+      margin: 14px 0 18px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .was-price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #9999a4;
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+
+    .was-price del {
+      font-size: 14px;
+    }
+
+    .offer-badge {
+      color: #ffb574;
+      background: #ff781f17;
+      border: 1px solid #ff781f36;
+      border-radius: 7px;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .now-price {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin: 2px 0;
+    }
+
+    .now-price .rs {
+      font-size: 14px;
+      color: #eee;
+      font-weight: 700;
+    }
+
+    .now-price strong {
+      font-family: Manrope, sans-serif;
+      font-size: 35px;
+      letter-spacing: -.06em;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .cinema .now-price strong,
+    .pro .now-price strong {
+      color: var(--orange2);
+    }
+
+    .duration {
+      font-size: 12px;
+      color: #c8c8d0;
+    }
+
+    .feature-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #d6d6dc;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 23px;
+      flex: 1;
+    }
+
+    .features li {
+      display: flex;
+      gap: 9px;
+      margin: 10px 0;
+      color: #d4d4dc;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .features i {
+      color: var(--orange2);
+      margin-top: 3px;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .features .soft {
+      color: #a3a3ae;
+    }
+
+    .price-card .btn {
+      width: 100%;
+      font-size: 13px;
+      margin-top: auto;
+    }
+
+    .price-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 25px auto 0;
+      max-width: 800px;
+    }
+
+    .price-note strong {
+      color: #eee;
+    }
+
+    .included {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .included-panel {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      background: linear-gradient(140deg, #17171c, #101013);
+    }
+
+    .included-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+      margin-top: 25px;
+    }
+
+    .included-item {
+      display: flex;
+      gap: 11px;
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    .included-item i {
+      color: var(--orange2);
+      margin-top: 4px;
+    }
+
+    .included-copy p {
+      color: var(--muted);
+      margin-top: 17px;
+    }
+
+    .included-copy .btn {
+      margin-top: 22px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff04;
+    }
+
+    .step-no {
+      font-size: 12px;
+      color: var(--orange2);
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .process-card h3 {
+      font-size: 18px;
+      margin: 15px 0 9px;
+    }
+
+    .process-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .review-card {
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--panel);
+    }
+
+    .stars {
+      color: #ffb45e;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 13px;
+      color: #d6d6dc;
+      min-height: 80px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #ff781f1c;
+      color: var(--orange2);
+    }
+
+    .review-author strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .review-author small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-grid details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 17px 19px;
+    }
+
+    .faq-grid summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .faq-grid details p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ff781f50;
+      border-radius: 25px;
+      padding: 42px;
+      background: radial-gradient(circle at 90% 10%, #ff781f30, transparent 40%), linear-gradient(120deg, #211811, #111114);
+    }
+
+    .cta-band h2 {
+      max-width: 680px;
+    }
+
+    .cta-band p {
+      color: #c3c3cc;
+      margin: 15px 0 22px;
+      max-width: 620px;
+    }
+
+    .footer {
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange2);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: #000c;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(620px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      background: #151519;
+      border: 1px solid #ffffff20;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 30px 100px #0009;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .modal-head h3 {
+      font-size: 24px;
+    }
+
+    .close-btn {
+      background: #ffffff0c;
+      border: 1px solid var(--line);
+      color: white;
+      border-radius: 9px;
+      padding: 7px 11px;
+      cursor: pointer;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1/-1;
+    }
+
+    .field label {
+      font-size: 12px;
+      color: #ddd;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: #0d0d10;
+      color: #fff;
+      border: 1px solid #ffffff20;
+      border-radius: 10px;
+      padding: 12px;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .checks {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .checks label {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    .checks input {
+      accent-color: var(--orange);
+    }
+
+    .modal-summary {
+      margin: 17px 0;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff05;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .modal-summary strong {
+      color: #fff;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .modal-actions .btn {
+      flex: 1;
+    }
+
+    .toast {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 80;
+      background: #202026;
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    @media(max-width: 1050px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero-grid {
+        gap: 25px;
+      }
+      .hero-visual {
+        min-height: 380px;
+      }
+      .hero-image {
+        min-height: 352px;
+      }
+      .pillar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 760px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+      .section {
+        padding: 68px 0;
+      }
+      .nav {
+        height: 68px;
+      }
+      .navlinks {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 18px 22px;
+        background: #101014;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .navlinks.open {
+        display: flex;
+      }
+      .nav-actions .btn {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .hero {
+        padding: 44px 0 38px;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-copy h1 {
+        font-size: clamp(34px, 10vw, 54px);
+      }
+      .hero-copy > p {
+        font-size: 15px;
+      }
+      .hero-visual {
+        min-height: 300px;
+      }
+      .hero-image {
+        min-height: 272px;
+      }
+      .trust-row {
+        gap: 12px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .work-media {
+        min-height: 180px;
+      }
+      .work-media.vertical video {
+        height: 280px;
+      }
+      .pillar-grid {
+        gap: 4px;
+      }
+      .pillar {
+        padding: 9px 3px;
+      }
+      .pillar strong {
+        font-size: 12px;
+      }
+      .pillar small {
+        font-size: 10px;
+      }
+      .included {
+        grid-template-columns: 1fr;
+      }
+      .included-list {
+        grid-template-columns: 1fr 1fr;
+      }
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+      .review-text {
+        min-height: 0;
+      }
+      .cta-band {
+        padding: 28px 23px;
+      }
+      .section-head {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+      }
+      .price-card {
+        padding: 25px 22px;
+      }
+      .price-card h3 {
+        font-size: 25px;
+      }
+      .features li {
+        font-size: 13px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .work-media.vertical video {
+        height: 340px;
+      }
+      .work-media.landscape video {
+        width: 100%;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .field.full {
+        grid-column: auto;
+      }
+      .modal-box {
+        padding: 18px;
+      }
+      .modal-actions {
+        flex-direction: column;
+      }
+      .included-list {
+        grid-template-columns: 1fr;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+      }
+      .floating-card {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+      }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *:before,
+      *:after {
+        transition: none !important;
+      }
+    }
+
+    /* Language selector */
+    .language-btn {
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: #ffffff08;
+      color: #fff;
+      border-radius: 11px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: .2s;
+    }
+
+    .language-btn:hover {
+      border-color: #ff9b52;
+      color: #ffb574;
+    }
+
+    .lang-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(4, 4, 6, .88);
+      backdrop-filter: blur(18px);
+    }
+
+    .lang-overlay.open {
+      display: flex;
+    }
+
+    .lang-box {
+      width: min(520px, 100%);
+      padding: 30px;
+      border: 1px solid #ffffff22;
+      border-radius: 26px;
+      background: radial-gradient(circle at 100% 0%, #ff781f20, transparent 42%), #111115;
+      box-shadow: 0 30px 100px #000b;
+      text-align: center;
+    }
+
+    .lang-brand {
+      font-size: 12px;
+      letter-spacing: .2em;
+      color: #ffab52;
+      font-weight: 900;
+    }
+
+    .lang-box h2 {
+      font-size: clamp(26px, 5.5vw, 36px);
+      margin: 12px 0;
+    }
+
+    .lang-box > p {
+      color: #b9b9c3;
+      margin: 0 auto 24px;
+      max-width: 390px;
+      font-size: 14px;
+    }
+
+    .lang-options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 11px;
+    }
+
+    .lang-choice {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      padding: 15px 17px;
+      border: 1px solid #ffffff18;
+      border-radius: 15px;
+      background: #ffffff06;
+      color: #fff;
+      cursor: pointer;
+      transition: .2s;
+      width: 100%;
+    }
+
+    .lang-choice:hover,
+    .lang-choice:focus {
+      border-color: #ff9b52;
+      background: #ff781f16;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .lang-symbol {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #ff781f1e;
+      color: #ffb574;
+      font-weight: 900;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .lang-choice strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .lang-choice small {
+      display: block;
+      color: #a6a6b1;
+      margin-top: 2px;
+      font-size: 12px;
+    }
+
+    @media(max-width: 640px) {
+      .nav-actions {
+        gap: 7px;
+      }
+      .language-btn {
+        padding: 9px 10px;
+        font-size: 12px;
+      }
+      .lang-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="https://i.ibb.co/d0Y86rSZ/Please-Follow-Us-20260819-003846-0000.png" alt="VIBE ADS logo" onerror="this.style.display='none'">
+        <span style="color:#fff">VIBE <span>ADS</span></span>
+      </a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#work">Our Work</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="language-btn" id="languageToggle" type="button" aria-label="Change language">🌐 EN</button>
+        <a class="btn btn-primary" href="#packages">
+          <span>Explore Packages</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">AI-Powered Commercial Films</span>
+          <h1>Make Your Brand <span>Impossible to Ignore.</span></h1>
+          <p>From AI presenter ads to full cinematic stories, VIBE ADS creates scroll-stopping video advertisements for businesses that want to stand out — without the complexity of a traditional shoot.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#packages">
+              <span>Find Your Package</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a class="btn btn-ghost" href="#work">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Watch Our Work</span>
+            </a>
+          </div>
+          <div class="hero-note">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Built around your brand, product and campaign goal.</span>
+          </div>
+          <div class="trust-row">
+            <span><i class="fa-solid fa-check"></i> <span>AI Presenter Ads</span></span>
+            <span><i class="fa-solid fa-check"></i> <span>Product Commercials</span></span>
+            <span><i class="fa-solid fa-check"></i> <span>Cinematic Film Ads</span></span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://i.ibb.co/xtjcx7kz/file-00000000492c820e8e0c1653eda23661.png" alt="VIBE ADS creative advertisement showcase">
+          <div class="floating-card">
+            <div>
+              <strong>Creative that feels like a film.</strong>
+              <small>Concept · Characters · Product Reveal</small>
+            </div>
+            <div class="floating-icon">
+              <i class="fa-solid fa-clapperboard"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- STATS COUNTER SECTION -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-item">
+      <div class="stat-number" data-target="2480" data-suffix="+">0+</div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="4.9" data-decimals="1" data-prefix="" data-suffix=" / 5">4.9 / 5</div>
+      <div class="stat-label">Client Ratings ★★★★★</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="130" data-suffix="+">0+</div>
+      <div class="stat-label">Commercial Brands</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.stats-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,120,31,0.03), transparent);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.stat-item {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: transform .2s, border-color .2s;
+}
+.stat-item:hover {
+  transform: translateY(-3px);
+  border-color: #ff781f80;
+}
+.stat-number {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 900;
+  color: var(--orange2);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+@media(max-width: 760px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+</style>
+
+    <section class="pillars">
+      <div class="container pillar-grid">
+        <div class="pillar">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <strong>AI Presenters</strong>
+            <small>Brand-led presenter videos</small>
+          </div>
+        </div>
+        <div class="pillar">
+          <i class="fa-solid fa-cube"></i>
+          <div>
+            <strong>Product Films</strong>
+            <small>Make the product the hero</small>
+          </div>
+        </div>
+        <div class="pillar">
+          <i class="fa-solid fa-film"></i>
+          <div>
+            <strong>Cinematic Stories</strong>
+            <small>Multi-character storytelling</small>
+          </div>
+        </div>
+        <div class="pillar">
+          <i class="fa-solid fa-bullhorn"></i>
+          <div>
+            <strong>Ad Support</strong>
+            <small>Optional campaign assistance</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Selected Work</span>
+          <h2>Ideas turned into <span style="color:var(--orange)">moving stories.</span></h2>
+          <p>Watch sample advertisements. Videos keep their original proportions, whether vertical 9:16 or landscape 16:9.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="work-card">
+            <div class="work-media vertical">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/video1.mp4" type="video/mp4">
+                Your browser does not support video.
+              </video>
+            </div>
+            <div class="work-info">
+              <strong>AI Presenter Advertisement</strong>
+              <small>Presenter-led brand storytelling</small>
+              <div class="ratio-label">VERTICAL · 9:16</div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-media landscape">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/video2.mp4" type="video/mp4">
+                Your browser does not support video.
+              </video>
+            </div>
+            <div class="work-info">
+              <strong>Product Commercial</strong>
+              <small>Product-first visual presentation</small>
+              <div class="ratio-label">LANDSCAPE · 16:9</div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-media vertical">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/video3.mp4" type="video/mp4">
+                Your browser does not support video.
+              </video>
+            </div>
+            <div class="work-info">
+              <strong>Cinematic Brand Film</strong>
+              <small>Dramatic scenes and reveal</small>
+              <div class="ratio-label">VERTICAL · 9:16</div>
+            </div>
+          </article>
+        </div>
+        <p class="price-note">
+          <span>Portfolio video sources are set to the existing</span>
+          <strong>videos/video1.mp4</strong>
+          <span>paths. Replace these source URLs with your GitHub raw video links before publishing if your portfolio is hosted there.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Transparent Packages</span>
+          <h2>Choose the <span style="color:var(--orange)">VIBE</span> your brand needs.</h2>
+          <p>Choose a quick promotional video, a polished ad, or go all-in with a cinematic story built around your business.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="plan-top">
+              <span class="plan-code">01 / ESSENTIAL</span>
+              <span class="plan-icon"><i class="fa-solid fa-bolt"></i></span>
+            </div>
+            <h3>VIBE STARTER</h3>
+            <p class="plan-desc">A simple, professional ad to introduce your product or service.</p>
+            <div class="price-block">
+              <div class="was-price">
+                <span>Regular price</span>
+                <del>Rs. 4,990</del>
+                <span class="offer-badge">OFFER</span>
+              </div>
+              <div class="now-price">
+                <span class="rs">Rs.</span>
+                <strong>2,999</strong>
+              </div>
+              <div class="duration">Up to 40 seconds</div>
+            </div>
+            <div class="feature-title">What's included</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i><span>AI Presenter Ad based on your script OR AI Product Commercial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Basic voice-over / Sinhala dialogue as needed</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Basic editing, BGM/SFX and simple on-screen text</span></li>
+              <li><i class="fa-solid fa-check"></i><span>One format: 9:16 or 16:9</span></li>
+              <li><i class="fa-solid fa-check"></i><span>1 round of minor revisions</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Delivery in 1–2 working days</span></li>
+            </ul>
+            <button class="btn btn-ghost order-btn" data-package="VIBE STARTER" data-price="2999">
+              <span>Choose Starter</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="price-card">
+            <div class="plan-top">
+              <span class="plan-code">02 / ENHANCED</span>
+              <span class="plan-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            </div>
+            <h3>VIBE BOOST</h3>
+            <p class="plan-desc">More polish, motion and detail for a stronger social ad.</p>
+            <div class="price-block">
+              <div class="was-price">
+                <span>Regular price</span>
+                <del>Rs. 8,990</del>
+                <span class="offer-badge">OFFER</span>
+              </div>
+              <div class="now-price">
+                <span class="rs">Rs.</span>
+                <strong>5,499</strong>
+              </div>
+              <div class="duration">Up to 90 seconds</div>
+            </div>
+            <div class="feature-title">What's included</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i><span>AI Presenter Ad OR AI Product Commercial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Sinhala dialogue and voice-over as needed</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Motion graphics and text animations</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Background music, sound effects and colour grading</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Brand-customized presenter / scene setup</span></li>
+              <li><i class="fa-solid fa-check"></i><span>One format: 9:16 or 16:9</span></li>
+              <li><i class="fa-solid fa-check"></i><span>1 round of minor revisions</span></li>
+            </ul>
+            <button class="btn btn-ghost order-btn" data-package="VIBE BOOST" data-price="5499">
+              <span>Choose Boost</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="price-card pro">
+            <div class="plan-ribbon">MOST POPULAR</div>
+            <div class="plan-top">
+              <span class="plan-code">03 / PREMIUM</span>
+              <span class="plan-icon"><i class="fa-solid fa-gem"></i></span>
+            </div>
+            <h3>VIBE PRO</h3>
+            <p class="plan-desc">Premium AI ad production plus campaign setup and 7-day support.</p>
+            <div class="price-block">
+              <div class="was-price">
+                <span>Regular price</span>
+                <del>Rs. 14,990</del>
+                <span class="offer-badge">SPECIAL OFFER</span>
+              </div>
+              <div class="now-price">
+                <span class="rs">Rs.</span>
+                <strong>8,499</strong>
+              </div>
+              <div class="duration">Up to 3 minutes · Full HD 1080p</div>
+            </div>
+            <div class="feature-title">Everything in Pro</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i><span>AI Presenter + multiple custom AI scenes</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Advanced motion graphics and cinematic editing</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Script in Sinhala or your chosen language, approved before production</span></li>
+              <li><i class="fa-solid fa-check"></i><span>One format: 9:16 or 16:9</span></li>
+              <li><i class="fa-solid fa-check"></i><span>1 round of minor final-video revisions after script approval</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Caption, CTA, hashtags and post copy</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Audience research, campaign setup, 7-day monitoring and basic optimization</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estimated delivery: 5–7 working days</span></li>
+            </ul>
+            <button class="btn btn-primary order-btn" data-package="VIBE PRO" data-price="8499">
+              <span>Choose VIBE PRO</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="price-card cinema">
+            <div class="plan-ribbon">EXCLUSIVE CINEMATIC</div>
+            <div class="plan-top">
+              <span class="plan-code">04 / FILM EXPERIENCE</span>
+              <span class="plan-icon"><i class="fa-solid fa-clapperboard"></i></span>
+            </div>
+            <h3>VIBE CINEMA</h3>
+            <p class="plan-desc">A full cinematic film-style advertisement built to make your product the hero.</p>
+            <div class="price-block">
+              <div class="was-price">
+                <span>Special package</span>
+                <span class="offer-badge">CINEMA OFFER</span>
+              </div>
+              <div class="now-price">
+                <span class="rs">Rs.</span>
+                <strong>11,999</strong>
+              </div>
+              <div class="duration">3 minutes+ · Full HD 1080p</div>
+            </div>
+            <div class="feature-title">Everything in Pro, plus</div>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i><span>Full cinematic story with multiple characters and dialogue</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Dramatic scenes, hero entries and product hero reveal</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Concept can come from you OR be created by VIBE ADS</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Custom AI film scenes and premium product showcase</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Advanced cinematic sound design and editing</span></li>
+              <li><i class="fa-solid fa-check"></i><span>One format: 9:16 or 16:9</span></li>
+              <li><i class="fa-solid fa-check"></i><span>1 round of minor final-video revisions after script approval</span></li>
+              <li><i class="fa-solid fa-check"></i><span>All VIBE PRO social copy and 7-day campaign support</span></li>
+            </ul>
+            <button class="btn btn-primary order-btn" data-package="VIBE CINEMA" data-price="11999">
+              <span>Create My Film</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+        </div>
+        <p class="price-note">
+          <strong>Important:</strong>
+          <span>Each package includes one video format. The second format is an additional service. VIBE PRO and VIBE CINEMA campaign ad spend is separate from the package price. Campaign setup and results depend on platform review, audience, creative and budget; reach or sales are not guaranteed.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container included">
+        <div class="included-copy">
+          <span class="eyebrow">Built Around Your Brand</span>
+          <h2>Your business. Your message. <span style="color:var(--orange)">Your VIBE.</span></h2>
+          <p>Whether you sell products, offer a service, run a shop or manage a growing company, we shape the ad around your audience and what you want people to do next.</p>
+          <a class="btn btn-primary" href="#packages">
+            <span>Compare Packages</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="included-panel">
+          <h3>Made for modern marketing</h3>
+          <div class="included-list">
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>AI presenter and product commercials</span>
+            </div>
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Brand-specific scenes and messaging</span>
+            </div>
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Vertical and landscape delivery options</span>
+            </div>
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Optional campaign setup support</span>
+            </div>
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Script approval before premium production</span>
+            </div>
+            <div class="included-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Clear scope and revision limits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Simple Process</span>
+          <h2>From idea to <span style="color:var(--orange)">ad-ready video.</span></h2>
+          <p>A clear process helps keep the creative aligned with your brand and campaign goals.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="step-no">STEP 01</span>
+            <h3>Choose your package</h3>
+            <p>Pick the package, video format and any campaign support you need. Tell us about your product or service.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-no">STEP 02</span>
+            <h3>Approve the direction</h3>
+            <p>For VIBE PRO and CINEMA, we prepare the script or concept for your approval before production starts.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-no">STEP 03</span>
+            <h3>Production & delivery</h3>
+            <p>We create and edit your video, apply the included revision scope and deliver the agreed format.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Client Feedback</span>
+          <h2>What customers <span style="color:var(--orange)">have shared.</span></h2>
+          <p>Reviews retained from the existing VIBE ADS website.</p>
+        </div>
+        <div class="review-grid" id="reviewGrid"></div>
+        <div style="text-align:center;margin-top:24px">
+          <button class="btn btn-ghost" id="showMoreReviews">
+            <span>Show more reviews</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quick Answers</span>
+          <h2>Good to <span style="color:var(--orange)">know.</span></h2>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>Does the package include the Facebook/Instagram ad budget?</summary>
+            <p>No. For VIBE PRO and VIBE CINEMA, campaign setup and 7-day monitoring are included, but the amount paid to Meta for ad delivery is separate and agreed with you.</p>
+          </details>
+          <details>
+            <summary>Can I get both vertical and landscape formats?</summary>
+            <p>One format (9:16 or 16:9) is included per package. The second format can be added for an extra fee, confirmed before production.</p>
+          </details>
+          <details>
+            <summary>Can I change the script after production starts?</summary>
+            <p>For VIBE PRO and VIBE CINEMA, the script/concept is approved before production. One round of minor final-video changes is included; a new script, new scenes or a major concept change may require an additional quote.</p>
+          </details>
+          <details>
+            <summary>Are views, messages or sales guaranteed?</summary>
+            <p>No. Advertising results vary based on the offer, creative, audience, budget, season and platform delivery. We do not promise a specific reach, message count or sales result.</p>
+          </details>
+          <details>
+            <summary>Can VIBE CINEMA use my own story idea?</summary>
+            <p>Yes. You can bring your own story or ask VIBE ADS to develop a new concept suited to your business and product.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <span class="eyebrow">Let's Create</span>
+          <h2>Ready to make your brand the one people remember?</h2>
+          <p>Choose a package and send your requirements directly to VIBE ADS on WhatsApp. We'll confirm the scope, format, timeline and any extra costs before starting.</p>
+          <button class="btn btn-primary" id="generalOrder">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Discuss Your Project</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <span style="color:#fff">VIBE <span>ADS</span></span>
+      </a>
+      <span>Creative AI advertising for ambitious businesses.</span>
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#packages">Packages</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <span>© <span id="year"></span> VIBE ADS</span>
+    </div>
+  </footer>
+
+  <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">WhatsApp Order</span>
+          <h3 id="modalTitle">Configure your ad</h3>
+        </div>
+        <button class="close-btn" id="closeModal" aria-label="Close">✕</button>
+      </div>
+      <form id="orderForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="customerName">Your name / business</label>
+            <input id="customerName" name="customerName" placeholder="Business or your name" required>
+          </div>
+          <div class="field">
+            <label for="customerPhone">Contact number</label>
+            <input id="customerPhone" name="customerPhone" type="tel" placeholder="07X XXX XXXX">
+          </div>
+          <div class="field">
+            <label for="packageSelect">Package</label>
+            <select id="packageSelect" name="packageSelect">
+              <option value="VIBE STARTER" data-keep-original="1">VIBE STARTER — Rs. 2,999</option>
+              <option value="VIBE BOOST" data-keep-original="1">VIBE BOOST — Rs. 5,499</option>
+              <option value="VIBE PRO" data-keep-original="1">VIBE PRO — Rs. 8,499</option>
+              <option value="VIBE CINEMA" data-keep-original="1">VIBE CINEMA — Rs. 11,999</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="formatSelect">Video format</label>
+            <select id="formatSelect" name="formatSelect">
+              <option value="9:16 Vertical">9:16 Vertical (Reels)</option>
+              <option value="16:9 Landscape">16:9 Landscape</option>
+              <option value="Both formats — quote required">Both formats (extra fee)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="languageSelect">Dialogue / script language</label>
+            <select id="languageSelect" name="languageSelect">
+              <option value="Sinhala">Sinhala</option>
+              <option value="English">English</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Other / mixed language">Other / mixed language</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="campaignSelect">Campaign support</label>
+            <select id="campaignSelect" name="campaignSelect">
+              <option value="No campaign support">Video only</option>
+              <option value="VIBE PRO/CINEMA campaign support discussion">Discuss campaign support (PRO/CINEMA)</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="projectBrief">Tell us about your business / idea</label>
+            <textarea id="projectBrief" name="projectBrief" placeholder="Product/service, target audience, story idea, reference links…"></textarea>
+          </div>
+          <div class="field full">
+            <div class="checks">
+              <label>
+                <input type="checkbox" id="ownConcept">
+                <span>I have my own story / script idea</span>
+              </label>
+              <label>
+                <input type="checkbox" id="needConcept">
+                <span>Help me create the concept</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-summary" id="orderSummary">
+          <strong>Selected package:</strong> VIBE STARTER · Rs. 2,999<br>
+          Ad spend, extra format and optional extras are quoted separately where applicable.
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="cancelOrder">
+            <span>Cancel</span>
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Continue on WhatsApp</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="lang-overlay" id="languageOverlay" role="dialog" aria-modal="true" aria-labelledby="languageTitle">
+    <div class="lang-box">
+      <div class="lang-brand">VIBE ADS</div>
+      <h2 id="languageTitle">Choose your language</h2>
+      <p id="languageSubtitle">Select a language to explore our website in the language you prefer.</p>
+      <div class="lang-options">
+        <button class="lang-choice" type="button" data-lang="en">
+          <span class="lang-symbol">EN</span>
+          <span>
+            <strong>English</strong>
+            <small>Continue in English</small>
+          </span>
+        </button>
+        <button class="lang-choice" type="button" data-lang="si">
+          <span class="lang-symbol">සි</span>
+          <span>
+            <strong>සිංහල</strong>
+            <small>සිංහල භාෂාවෙන් ඉදිරියට යන්න</small>
+          </span>
+        </button>
+        <button class="lang-choice" type="button" data-lang="ta">
+          <span class="lang-symbol">த</span>
+          <span>
+            <strong>தமிழ்</strong>
+            <small>தமிழில் தொடரவும்</small>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+<script>
+const PACKAGE_PRICES={'VIBE STARTER':2999,'VIBE BOOST':5499,'VIBE PRO':8499,'VIBE CINEMA':11999};
+const WHATSAPP_NUMBER='94760308163';
+let currentLang='en';
+
+const modal=document.getElementById('orderModal'), packageSelect=document.getElementById('packageSelect');
+
+function getSummaryHTML(name, price, lang){
+  const formattedPrice = price.toLocaleString('en-LK');
+  if(lang === 'si'){
+    return `<strong>තෝරාගත් පැකේජය:</strong> ${name} · රු. ${formattedPrice}<br>එක් Video Format එකක් ඇතුළත්. දැන්වීම් වියදම (Ad spend), දෙවැනි Format එක සහ අමතර සේවා අවශ්‍ය නම් වෙනම ගණන් බලනු ලැබේ.`;
+  }
+  if(lang === 'ta'){
+    return `<strong>தேர்ந்தெடுக்கப்பட்ட தொகுப்பு:</strong> ${name} · ரூ. ${formattedPrice}<br>ஒரு Video Format அடங்கும். விளம்பரச் செலவு, இரண்டாவது Format மற்றும் கூடுதல் சேவைகளுக்கு தனியாக கட்டணம் கணக்கிடப்படும்.`;
+  }
+  return `<strong>Selected package:</strong> ${name} · Rs. ${formattedPrice}<br>One format included. Ad spend, second format and any extra work are quoted separately where applicable.`;
+}
+
+function updateSummary(){
+  const name=packageSelect.value, price=PACKAGE_PRICES[name]||0;
+  document.getElementById('orderSummary').innerHTML=getSummaryHTML(name, price, currentLang);
+}
+
+function openOrder(name='VIBE STARTER'){
+  packageSelect.value=name;
+  updateSummary();
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeOrder(){
+  modal.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.querySelectorAll('.order-btn').forEach(btn=>btn.addEventListener('click',()=>openOrder(btn.dataset.package)));
+document.getElementById('generalOrder').addEventListener('click',()=>openOrder('VIBE CINEMA'));
+document.getElementById('closeModal').addEventListener('click',closeOrder);
+document.getElementById('cancelOrder').addEventListener('click',closeOrder);
+packageSelect.addEventListener('change',updateSummary);
+modal.addEventListener('click',e=>{if(e.target===modal)closeOrder()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOrder()});
+
+document.getElementById('orderForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=packageSelect.value;
+  const price=PACKAGE_PRICES[name];
+  const fields={
+    customer:document.getElementById('customerName').value.trim(),
+    phone:document.getElementById('customerPhone').value.trim(),
+    format:document.getElementById('formatSelect').value,
+    language:document.getElementById('languageSelect').value,
+    campaign:document.getElementById('campaignSelect').value,
+    brief:document.getElementById('projectBrief').value.trim(),
+    own:document.getElementById('ownConcept').checked,
+    help:document.getElementById('needConcept').checked
+  };
+    let msg=`👋 *Hi VIBE ADS!* \n\n` +
+          `💬 *I'd like to discuss an order.*\n\n` +
+          `👤 *Business / Name:* ${fields.customer}\n` +
+          `📞 *Contact number:* ${fields.phone||'Not provided'}\n` +
+          `📦 *Selected Package:* ${name}\n` +
+          `💰 *Package Price:* Rs. ${price.toLocaleString('en-LK')}\n` +
+          `📐 *Video Format:* ${fields.format}\n` +
+          `🌐 *Script Language:* ${fields.language}\n` +
+          `🚀 *Campaign Support:* ${fields.campaign}\n` +
+          `💡 *Concept Type:* ${fields.own&&fields.help?'I have an idea and would also like creative input':fields.own?'I have my own story/script idea':fields.help?'Please help create a concept':'To be discussed'}\n` +
+          `📝 *Project Details:* ${fields.brief||'Will discuss on WhatsApp'}\n\n` +
+          `📌 *Please confirm the scope, timeline and any additional charges before starting. I understand that Meta ad spend is separate and results are not guaranteed.*`;
+
+  window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  closeOrder();
+});
+
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const sriLankanClients = [
+  { name: "Sanduni Fernando", text: "Vibe Ads team eka ewahamukema supiri! AI presenter ge look eka nisa mage page ekata ad adiyen sales awa. Highly recommended!" },
+  { name: "Kasun Jayasinghe", text: "Mage shoe brand ekata ad eka hadala dunna. Fast delivery and top quality. Superb work bro!" },
+  { name: "Nipuni Wickramasinghe", text: "Quality eka nam 100% kma thiyenawa. Motion graphics eka mamat hithuwe na mechara lassanata ei kiyala!" },
+  { name: "Chamara Perera", text: "Food ad eka balala ayeth kattiya order karanna gattha. Marketing budget ekata hariyana supiri package ekak." },
+  { name: "Dilshan Maduranga", text: "Ad eka dapu dawase indان inbox eka full. Vibe Ads team ekata godak sthuthiy!" },
+  { name: "Oshadi Ranasinghe", text: "Godak lassanata hadala dunna. Revisions dekatama godak supportive wuna. Highly recommended!" },
+  { name: "Ayesha De Silva", text: "Mage Skincare product ekata AI video presenter dala ad eka kare. Voice over ekath ekka eka niyamai!" },
+  { name: "CEYLON SPICE EXPORT", text: "Foreign clients la target karala karapu ad eka godak සාර්ථකයි. Very satisfied." },
+  { name: "Shenal Senanayake", text: "Short time ekකින් ලස්සනට Ad එකක් හදලා දුන්නා. Motion text animation එක මරු!" },
+  { name: "Tharushi Gamage", text: "Page boost ekata harima set wena ad eka. Value for money guaranteed." },
+  { name: "Lahiru Dananjaya", text: "Professional level quality. Shoots walata spent karana gana thaparen ithuru wuna." },
+  { name: "Kavindi Herath", text: "Luxury look ekak thiyෙන ad එකක් ඕන වෙලා තිබ්බේ. Vibe Ads එකෙන් ඒක අකුරටම කරලා දුන්නා!" },
+  { name: "Gayan Karunaratne", text: "3D Logo animation එකයි sound effects ටිකයි පට්ටම ගාම්භීරයි. Thanks a lot team!" },
+  { name: "Dinithi Rashmi", text: "Customer service eka godak hondai. Ad eka edit karala dunna mata one widihatama." },
+  { name: "Thilina Pathirana", text: "Unstoppable results. Page reach eka 3x wadi wuna ad eka run කරාට පස්සේ." },
+  { name: "GLOW BEAUTY LK", text: "Aesthetics walata barawama lassanata hadala thibba. Vibe Pro package eka maru!" },
+  { name: "Bhanuka Rodrigo", text: "Fast response, polite talk, quick delivery. Highly recommended!" },
+  { name: "Nimmi Abeyrathna", text: "Baby clothes collection එකට හදපු Ad එක මාරම cute වගේම professional. Thanks!" },
+  { name: "CEYLON TEA VIBE", text: "Brand value eka wadi karaganna pulwan marama ad style ekak. Superb creative thinking." },
+  { name: "Chathuri Liyanage", text: "Vibe Ads is the best! On time delivery and friendly service. 5 Stars!" }
+];
+
+const reviewGrid=document.getElementById('reviewGrid');
+let reviewsShown=6;
+function renderReviews(){
+  const customerReviewLabel = currentLang === 'si' ? 'පාරිභෝගික අදහස' : currentLang === 'ta' ? 'வாடிக்கையாளர் கருத்து' : 'Customer review';
+  reviewGrid.innerHTML=sriLankanClients.slice(0,reviewsShown).map(client=>`<article class="review-card"><div class="stars" aria-label="5 stars">★★★★★</div><p class="review-text">“${client.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}”</p><div class="review-author"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><strong data-no-translate="1">${client.name.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</strong><small>${customerReviewLabel}</small></div></div></article>`).join('');
+  const b=document.getElementById('showMoreReviews');
+  b.style.display=reviewsShown>=sriLankanClients.length?'none':'inline-flex';
+}
+document.getElementById('showMoreReviews').addEventListener('click',()=>{
+  reviewsShown=Math.min(reviewsShown+6,sriLankanClients.length);
+  renderReviews();
+});
+renderReviews();
+
+(function(){
+  const translations = {
+    si: {
+      "Our Work":"අපේ නිර්මාණ","Packages":"පැකේජ්","How It Works":"ක්‍රියාවලිය","Reviews":"පාරිභෝගික අදහස්","FAQ":"ප්‍රශ්න සහ පිළිතුරු","Explore Packages":"පැකේජ් බලන්න",
+      "AI-Powered Commercial Films":"AI තාක්ෂණයෙන් වෙළඳ දැන්වීම්","Make Your Brand":"ඔබේ Brand එක","Impossible to Ignore.":"අමතක කළ නොහැකි කරමු.","From AI presenter ads to full cinematic stories, VIBE ADS creates scroll-stopping video advertisements for businesses that want to stand out — without the complexity of a traditional shoot.":"AI Presenter දැන්වීම්වල සිට සම්පූර්ණ සිනමාත්මක කතා දක්වා, සාම්ප්‍රදායික රූගත කිරීමක සංකීර්ණතාවයකින් තොරව ඔබේ ව්‍යාපාරය කැපී පෙනෙන වීඩියෝ දැන්වීම් VIBE ADS නිර්මාණය කරයි.",
+      "Find Your Package":"ඔබේ පැකේජය තෝරන්න","Watch Our Work":"අපේ නිර්මාණ බලන්න","Built around your brand, product and campaign goal.":"ඔබේ Brand එක, නිෂ්පාදනය සහ අරමුණ අනුව නිර්මාණය කරයි.","AI Presenter Ads":"AI Presenter දැන්වීම්","Product Commercials":"නිෂ්පාදන දැන්වීම්","Cinematic Film Ads":"සිනමාත්මක Film දැන්වීම්",
+      "Creative that feels like a film.":"චිත්‍රපටයක් වැනි නිර්මාණශීලීත්වයක්.","Concept · Characters · Product Reveal":"Concept · චරිත · නිෂ්පාදන හඳුන්වාදීම",
+      "AI Presenters":"AI Presenters","Brand-led presenter videos":"ඔබේ Brand එකට ගැළපෙන Presenter වීඩියෝ","Product Films":"නිෂ්පාදන වීඩියෝ","Make the product the hero":"නිෂ්පාදනය ප්‍රධාන කර පෙන්වීම","Cinematic Stories":"සිනමාත්මක කතා","Multi-character storytelling":"චරිත කිහිපයක් සහිත කතා","Ad Support":"දැන්වීම් සහාය","Optional campaign assistance":"විකල්ප Campaign සහාය",
+      "Selected Work":"තෝරාගත් නිර්මාණ","Ideas turned into":"අදහස්","moving stories.":"ජීවමාන කතා බවට.","Watch sample advertisements. Videos keep their original proportions, whether vertical 9:16 or landscape 16:9.":"උදාහරණ දැන්වීම් නරඹන්න. 9:16 සිරස් හෝ 16:9 තිරස් වීඩියෝවල මුල් ප්‍රමාණ අනුපාතය එලෙසම පවතී.",
+      "AI Presenter Advertisement":"AI Presenter වෙළඳ දැන්වීම","Presenter-led brand storytelling":"Presenter මඟින් ඉදිරිපත් කරන Brand කතාව","Product Commercial":"නිෂ්පාදන වෙළඳ දැන්වීම","Product-first visual presentation":"නිෂ්පාදනයට මුල්තැන දෙන දෘශ්‍ය ඉදිරිපත් කිරීම","Cinematic Brand Film":"සිනමාත්මක Brand Film","Dramatic scenes and reveal":"ආකර්ෂණීය දර්ශන සහ හඳුන්වාදීම",
+      "Portfolio video sources are set to the existing":"Portfolio වීඩියෝ දැනට","paths. Replace these source URLs with your GitHub raw video links before publishing if your portfolio is hosted there.":"ලෙස සකසා ඇත. GitHub හි පළ කරන්නේ නම් එම ෆයිල් අදාළ ෆෝල්ඩරයට එක් කරන්න.",
+      "Transparent Packages":"පැහැදිලි පැකේජ් මිල ගණන්","Choose the":"ඔබේ Brand එකට ගැළපෙන","your brand needs.":"තෝරන්න.","Choose a quick promotional video, a polished ad, or go all-in with a cinematic story built around your business.":"කෙටි ප්‍රචාරක වීඩියෝවක්, වඩාත් වෘත්තීය දැන්වීමක් හෝ ඔබේ ව්‍යාපාරය වටා ගොඩනැඟූ සිනමාත්මක කතාවක් තෝරන්න.",
+      "Regular price":"සාමාන්‍ය මිල","OFFER":"විශේෂ මිල","SPECIAL OFFER":"විශේෂ දීමනාව","What's included":"ඇතුළත් දේ","Up to 40 seconds":"තත්පර 40 දක්වා","Up to 90 seconds":"තත්පර 90 දක්වා","Up to 3 minutes · Full HD 1080p":"මිනිත්තු 3 දක්වා · Full HD 1080p","3 minutes+ · Full HD 1080p":"මිනිත්තු 3+ · Full HD 1080p",
+      "A simple, professional ad to introduce your product or service.":"ඔබේ නිෂ්පාදනය හෝ සේවාව හඳුන්වා දීමට සරල, වෘත්තීය දැන්වීමක්.","More polish, motion and detail for a stronger social ad.":"වඩාත් ආකර්ෂණීය Social Media දැන්වීමක් සඳහා වැඩි Motion සහ විස්තර.","Premium AI ad production plus campaign setup and 7-day support.":"Premium AI දැන්වීම් නිෂ්පාදනය සමඟ Campaign Setup සහ දින 7ක සහාය.","A full cinematic film-style advertisement built to make your product the hero.":"ඔබේ නිෂ්පාදනය ප්‍රධාන කර පෙන්වන සම්පූර්ණ සිනමාත්මක Film දැන්වීමක්.",
+      "MOST POPULAR":"ජනප්‍රියම පැකේජය","EXCLUSIVE CINEMATIC":"විශේෂ සිනමා පැකේජය","Everything in Pro":"Pro හි සියල්ල","Everything in Pro, plus":"Pro හි සියල්ලට අමතරව","Special package":"විශේෂ පැකේජය","CINEMA OFFER":"CINEMA විශේෂ මිල",
+      "AI Presenter Ad based on your script OR AI Product Commercial":"ඔබේ Script එක අනුව AI Presenter දැන්වීමක් හෝ AI Product Commercial එකක්","Basic voice-over / Sinhala dialogue as needed":"අවශ්‍ය පරිදි මූලික Voice-over / සිංහල දෙබස්","Basic editing, BGM/SFX and simple on-screen text":"මූලික Editing, BGM/SFX සහ තිරයේ සරල Text","One format: 9:16 or 16:9":"එක් Video Format එකක්: 9:16 හෝ 16:9","1 round of minor revisions":"සුළු සංශෝධන වටයක්","Delivery in 1–2 working days":"වැඩ කරන දින 1–2කින් භාරදීම","Choose Starter":"Starter තෝරන්න",
+      "AI Presenter Ad OR AI Product Commercial":"AI Presenter දැන්වීමක් හෝ AI Product Commercial එකක්","Sinhala dialogue and voice-over as needed":"අවශ්‍ය පරිදි සිංහල දෙබස් සහ Voice-over","Motion graphics and text animations":"Motion Graphics සහ Text Animations","Background music, sound effects and colour grading":"Background Music, Sound Effects සහ Colour Grading","Brand-customized presenter / scene setup":"ඔබේ Brand එකට ගැළපෙන Presenter / Scene","Choose Boost":"Boost තෝරන්න",
+      "AI Presenter + multiple custom AI scenes":"AI Presenter සහ අභිරුචි AI Scenes කිහිපයක්","Advanced motion graphics and cinematic editing":"Advanced Motion Graphics සහ Cinematic Editing","Script in Sinhala or your chosen language, approved before production":"සිංහල හෝ ඔබ තෝරාගත් භාෂාවෙන් Script එකක්; නිෂ්පාදනයට පෙර අනුමැතිය","1 round of minor final-video revisions after script approval":"Script එක අනුමත කළ පසු අවසන් වීඩියෝවට සුළු සංශෝධන වටයක්","Caption, CTA, hashtags and post copy":"Caption, CTA, Hashtags සහ Post Copy","Audience research, campaign setup, 7-day monitoring and basic optimization":"Audience Research, Campaign Setup, දින 7ක Monitoring සහ මූලික Optimization","Estimated delivery: 5–7 working days":"අපේක්ෂිත භාරදීම: වැඩ කරන දින 5–7","Choose VIBE PRO":"VIBE PRO තෝරන්න",
+      "Full cinematic story with multiple characters and dialogue":"චරිත කිහිපයක් සහ දෙබස් සහිත සම්පූර්ණ සිනමාත්මක කතාවක්","Dramatic scenes, hero entries and product hero reveal":"Dramatic Scenes, Hero Entries සහ Product Hero Reveal","Concept can come from you OR be created by VIBE ADS":"ඔබේ අදහස අනුව හෝ VIBE ADS නිර්මාණය කරන Concept එකක්","Custom AI film scenes and premium product showcase":"අභිරුචි AI Film Scenes සහ Premium Product Showcase","Advanced cinematic sound design and editing":"Advanced Cinematic Sound Design සහ Editing","All VIBE PRO social copy and 7-day campaign support":"VIBE PRO හි සියලුම Social Copy සහ දින 7ක Campaign සහාය","Create My Film":"මගේ Film එක හදන්න",
+      "Important:":"වැදගත්:","Each package includes one video format. The second format is an additional service. VIBE PRO and VIBE CINEMA campaign ad spend is separate from the package price. Campaign setup and results depend on platform review, audience, creative and budget; reach or sales are not guaranteed.":"සෑම පැකේජයකටම එක් Video Format එකක් ඇතුළත්. දෙවැනි Format එකට අමතර ගාස්තුවක් අය වේ. VIBE PRO සහ VIBE CINEMA සඳහා දැන්වීම් වියදම පැකේජ් මිලට ඇතුළත් නැත. ප්‍රතිඵල Audience, Creative, Budget සහ Platform අනුව වෙනස් වන අතර Reach හෝ Sales සහතික කළ නොහැක.",
+      "Built Around Your Brand":"ඔබේ Brand එකට ගැළපෙන ලෙස","Your business. Your message.":"ඔබේ ව්‍යාපාරය. ඔබේ පණිවිඩය.","Your VIBE.":"ඔබේ VIBE.","Whether you sell products, offer a service, run a shop or manage a growing company, we shape the ad around your audience and what you want people to do next.":"ඔබ නිෂ්පාදන විකුණනවාද, සේවාවක් සපයනවාද, වෙළඳසැලක් හෝ වර්ධනය වන සමාගමක් පවත්වාගෙන යනවාද — ඔබේ පාරිභෝගිකයන් සහ ඔබ බලාපොරොත්තු වන ප්‍රතිචාර අනුව දැන්වීම නිර්මාණය කරමු.","Compare Packages":"පැකේජ් සසඳන්න","Made for modern marketing":"නවීන Marketing සඳහා","AI presenter and product commercials":"AI Presenter සහ Product Commercials","Brand-specific scenes and messaging":"Brand එකට ගැළපෙන Scenes සහ පණිවිඩ","Vertical and landscape delivery options":"සිරස් සහ තිරස් Video විකල්ප","Optional campaign setup support":"විකල්ප Campaign Setup සහාය","Script approval before premium production":"Premium නිෂ්පාදනයට පෙර Script අනුමැතිය","Clear scope and revision limits":"පැහැදිලි සේවා සීමා සහ සංශෝධන සීමා",
+      "Simple Process":"සරල ක්‍රියාවලිය","From idea to":"අදහසේ සිට","ad-ready video.":"දැන්වීමට සූදානම් වීඩියෝවක් දක්වා.","A clear process helps keep the creative aligned with your brand and campaign goals.":"පියවරෙන් පියවර ක්‍රියාවලිය ඔබේ Brand එකට සහ Campaign අරමුණුවලට නිර්මාණය ගැළපෙන බව තහවුරු කරයි.","Choose your package":"ඔබේ පැකේජය තෝරන්න","Pick the package, video format and any campaign support you need. Tell us about your product or service.":"පැකේජය, Video Format එක සහ අවශ්‍ය Campaign සහාය තෝරා ඔබේ නිෂ්පාදනය හෝ සේවාව ගැන කියන්න.","Approve the direction":"නිර්මාණ අදහස අනුමත කරන්න","For VIBE PRO and CINEMA, we prepare the script or concept for your approval before production starts.":"VIBE PRO සහ CINEMA සඳහා නිෂ්පාදනයට පෙර Script එක හෝ Concept එක ඔබේ අනුමැතියට ඉදිරිපත් කරමු.","Production & delivery":"නිෂ්පාදනය සහ භාරදීම","We create and edit your video, apply the included revision scope and deliver the agreed format.":"වීඩියෝව නිර්මාණය කර Edit කර, එකඟ වූ සංශෝධන සිදු කර තීරණය කළ Format එකෙන් භාර දෙමු.",
+      "Client Feedback":"පාරිභෝගික අදහස්","What customers":"පාරිභෝගිකයන්","have shared.":"පවසා ඇති දේ.","Reviews retained from the existing VIBE ADS website.":"පෙර VIBE ADS වෙබ් අඩවියේ තිබූ Reviews එලෙසම තබා ඇත.","Show more reviews":"තවත් Reviews බලන්න","Quick Answers":"කෙටි පිළිතුරු","Good to":"දැනගැනීමට","know.":"වැදගත් දේ.","Does the package include the Facebook/Instagram ad budget?":"Facebook/Instagram දැන්වීම් වියදම පැකේජයට ඇතුළත්ද?","No. For VIBE PRO and VIBE CINEMA, campaign setup and 7-day monitoring are included, but the amount paid to Meta for ad delivery is separate and agreed with you.":"නැහැ. VIBE PRO සහ VIBE CINEMA සඳහා Campaign Setup සහ දින 7ක Monitoring ඇතුළත්. Meta වෙත ගෙවන දැන්වීම් වියදම වෙනම තීරණය කරයි.","Can I get both vertical and landscape formats?":"සිරස් සහ තිරස් Format දෙකම ලබාගත හැකිද?","One format (9:16 or 16:9) is included per package. The second format can be added for an extra fee, confirmed before production.":"එක් පැකේජයකට 9:16 හෝ 16:9 යන Format එකක් ඇතුළත්. දෙවැනි Format එක අමතර ගාස්තුවකට ලබාගත හැකියි.","Can I change the script after production starts?":"නිෂ්පාදනය ආරම්භ කළ පසු Script එක වෙනස් කළ හැකිද?","For VIBE PRO and VIBE CINEMA, the script/concept is approved before production. One round of minor final-video changes is included; a new script, new scenes or a major concept change may require an additional quote.":"VIBE PRO සහ CINEMA සඳහා නිෂ්පාදනයට පෙර Script/Concept අනුමත කරයි. අවසන් වීඩියෝවට සුළු සංශෝධන වටයක් ඇතුළත්. නව Script, Scenes හෝ විශාල වෙනස්කම් සඳහා අමතර ගාස්තුවක් අය විය හැකියි.","Are views, messages or sales guaranteed?":"Views, Messages හෝ Sales සහතික කරනවාද?","No. Advertising results vary based on the offer, creative, audience, budget, season and platform delivery. We do not promise a specific reach, message count or sales result.":"නැහැ. ප්‍රතිඵල Offer, Creative, Audience, Budget, කාලය සහ Platform අනුව වෙනස් වේ. නිශ්චිත Reach, Messages හෝ Sales ගණනක් සහතික නොකරමු.","Can VIBE CINEMA use my own story idea?":"VIBE CINEMA සඳහා මගේම කතාවක් භාවිතා කළ හැකිද?","Yes. You can bring your own story or ask VIBE ADS to develop a new concept suited to your business and product.":"ඔව්. ඔබේම කතාවක් ලබා දෙන්න පුළුවන්, නැත්නම් ඔබේ ව්‍යාපාරයට ගැළපෙන අලුත් Concept එකක් VIBE ADS වෙතින් නිර්මාණය කරවාගත හැකියි.",
+      "Let's Create":"අපි නිර්මාණය කරමු","Ready to make your brand the one people remember?":"ඔබේ Brand එක මතකයේ රැඳෙන එකක් කරන්න සූදානම්ද?","Choose a package and send your requirements directly to VIBE ADS on WhatsApp. We'll confirm the scope, format, timeline and any extra costs before starting.":"පැකේජයක් තෝරා ඔබේ අවශ්‍යතා WhatsApp හරහා VIBE ADS වෙත යවන්න. ආරම්භයට පෙර සේවා විස්තර, Format, කාලසීමාව සහ අමතර ගාස්තු තහවුරු කරමු.","Discuss Your Project":"ඔබේ ව්‍යාපෘතිය ගැන කතා කරමු","Creative AI advertising for ambitious businesses.":"දියුණු වීමට කැමති ව්‍යාපාර සඳහා නිර්මාණශීලී AI දැන්වීම්.","Work":"නිර්මාණ","Configure your ad":"ඔබේ දැන්වීම සකසන්න","WhatsApp Order":"WhatsApp ඇණවුම","Your name / business":"ඔබේ නම / ව්‍යාපාරය","Business or your name":"ව්‍යාපාරයේ නම හෝ ඔබේ නම","Contact number":"දුරකථන අංකය","Package":"පැකේජය","Video format":"වීඩියෝ Format","9:16 Vertical (Reels)":"9:16 සිරස් (Reels)","16:9 Landscape":"16:9 තිරස් (Landscape)","Both formats (extra fee)":"Format දෙකම (අමතර ගාස්තු)","Dialogue / script language":"දෙබස් / Script භාෂාව","Sinhala":"සිංහල","English":"ඉංග්‍රීසි (English)","Tamil":"දෙමළ (Tamil)","Other / mixed language":"වෙනත් / මිශ්‍ර භාෂා","Campaign support":"Campaign සහාය","Video only":"වීඩියෝව පමණයි","Discuss campaign support (PRO/CINEMA)":"Campaign සහාය ගැන කතා කරමු (PRO/CINEMA)","Tell us about your business / idea":"ඔබේ ව්‍යාපාරය / අදහස ගැන කියන්න","Product/service, target audience, story idea, reference links…":"නිෂ්පාදනය/සේවාව, ඉලක්කගත පාරිභෝගිකයන්, කතාව, Reference Links…","I have my own story / script idea":"මට මගේම කතාවක් / Script අදහසක් තිබේ","Help me create the concept":"Concept එක නිර්මාණය කිරීමට උදව් කරන්න","Cancel":"අවලංගු කරන්න","Continue on WhatsApp":"WhatsApp හරහා ඉදිරියට යන්න","Customer review":"පාරිභෝගික අදහස"
+    },
+    ta: {
+      "Our Work":"எங்கள் படைப்புகள்","Packages":"தொகுப்புகள்","How It Works":"செயல்முறை","Reviews":"வாடிக்கையாளர் கருத்துகள்","FAQ":"கேள்விகள்","Explore Packages":"தொகுப்புகளைப் பார்க்க",
+      "AI-Powered Commercial Films":"AI விளம்பரத் திரைப்படங்கள்","Make Your Brand":"உங்கள் பிராண்டை","Impossible to Ignore.":"மறக்க முடியாததாக மாற்றுங்கள்.","From AI presenter ads to full cinematic stories, VIBE ADS creates scroll-stopping video advertisements for businesses that want to stand out — without the complexity of a traditional shoot.":"AI Presenter விளம்பரங்களிலிருந்து முழுமையான சினிமா கதைகள் வரை, பாரம்பரிய படப்பிடிப்பின் சிக்கலின்றி உங்கள் வணிகத்தைத் தனித்துக் காட்டும் வீடியோ விளம்பரங்களை VIBE ADS உருவாக்குகிறது.",
+      "Find Your Package":"உங்கள் தொகுப்பைத் தேர்ந்தெடுக்கவும்","Watch Our Work":"எங்கள் படைப்புகளைப் பாருங்கள்","Built around your brand, product and campaign goal.":"உங்கள் பிராண்ட், தயாரிப்பு மற்றும் பிரச்சார இலக்கிற்கு ஏற்ப உருவாக்கப்படுகிறது.","AI Presenter Ads":"AI Presenter விளம்பரங்கள்","Product Commercials":"தயாரிப்பு விளம்பரங்கள்","Cinematic Film Ads":"சினிமா விளம்பரங்கள்",
+      "Creative that feels like a film.":"திரைப்படம் போன்ற படைப்பாற்றல்.","Concept · Characters · Product Reveal":"கருத்து · கதாபாத்திரங்கள் · தயாரிப்பு அறிமுகம்",
+      "AI Presenters":"AI Presenters","Brand-led presenter videos":"உங்கள் பிராண்டிற்கேற்ற Presenter வீடியோக்கள்","Product Films":"தயாரிப்பு வீடியோக்கள்","Make the product the hero":"தயாரிப்பை முதன்மைப்படுத்துங்கள்","Cinematic Stories":"சினிமா கதைகள்","Multi-character storytelling":"பல கதாபாத்திரக் கதை","Ad Support":"விளம்பர உதவி","Optional campaign assistance":"விருப்ப பிரச்சார உதவி",
+      "Selected Work":"தேர்ந்தெடுக்கப்பட்ட படைப்புகள்","Ideas turned into":"யோசனைகளை","moving stories.":"உயிரோட்டமான கதைகளாக்குகிறோம்.","Watch sample advertisements. Videos keep their original proportions, whether vertical 9:16 or landscape 16:9.":"மாதிரி விளம்பரங்களைப் பாருங்கள். 9:16 செங்குத்து அல்லது 16:9 கிடைமட்ட வீடியோக்களின் அசல் விகிதம் பாதுகாக்கப்படும்.",
+      "AI Presenter Advertisement":"AI Presenter விளம்பரம்","Presenter-led brand storytelling":"Presenter வழிநடத்தும் பிராண்ட் கதை","Product Commercial":"தயாரிப்பு விளம்பரம்","Product-first visual presentation":"தயாரிப்புக்கு முக்கியத்துவம் அளிக்கும் காட்சி","Cinematic Brand Film":"சினிமா பிராண்ட் திரைப்படம்","Dramatic scenes and reveal":"சினிமா காட்சிகள் மற்றும் அறிமுகம்",
+      "Portfolio video sources are set to the existing":"Portfolio வீடியோக்கள் தற்போது","paths. Replace these source URLs with your GitHub raw video links before publishing if your portfolio is hosted there.":"என அமைக்கப்பட்டுள்ளன. GitHub-ல் பதிவேற்றும்போது அந்த கோப்புகளைச் சேர்க்கவும்.",
+      "Transparent Packages":"தெளிவான தொகுப்பு விலைகள்","Choose the":"உங்கள் பிராண்டிற்குத் தேவையான","your brand needs.":"VIBE-ஐத் தேர்ந்தெடுக்கவும்.","Choose a quick promotional video, a polished ad, or go all-in with a cinematic story built around your business.":"குறுகிய விளம்பர வீடியோ, மேம்பட்ட விளம்பரம் அல்லது உங்கள் வணிகத்தை மையமாகக் கொண்ட சினிமா கதೆಯನ್ನುத் தேர்ந்தெடுக்கவும்.",
+      "Regular price":"வழக்கமான விலை","OFFER":"சலுகை","SPECIAL OFFER":"சிறப்பு சலுகை","What's included":"இதில் அடங்குவது","Up to 40 seconds":"40 விநாடிகள் வரை","Up to 90 seconds":"90 விநாடிகள் வரை","Up to 3 minutes · Full HD 1080p":"3 நிமிடங்கள் வரை · Full HD 1080p","3 minutes+ · Full HD 1080p":"3 நிமிடங்கள்+ · Full HD 1080p",
+      "A simple, professional ad to introduce your product or service.":"உங்கள் தயாரிப்பு அல்லது சேவையை அறிமுகப்படுத்த எளிய, தொழில்முறை விளம்பரம்.","More polish, motion and detail for a stronger social ad.":"மேம்பட்ட Social Media விளம்பரத்திற்கான கூடுதல் Motion மற்றும் விவரங்கள்.","Premium AI ad production plus campaign setup and 7-day support.":"Premium AI விளம்பர உருவாக்கம், Campaign Setup மற்றும் 7 நாள் ஆதரவு.","A full cinematic film-style advertisement built to make your product the hero.":"உங்கள் தயாரிப்பை முதன்மைப்படுத்தும் முழுமையான சினிமா பாணி விளம்பரம்.",
+      "MOST POPULAR":"மிகவும் பிரபலமானது","EXCLUSIVE CINEMATIC":"சிறப்பு சினிமா தொகுப்பு","Everything in Pro":"Pro-வில் உள்ள அனைத்தும்","Everything in Pro, plus":"Pro-வில் உள்ள அனைத்துடன்","Special package":"சிறப்பு தொகுப்பு","CINEMA OFFER":"CINEMA சலுகை",
+      "AI Presenter Ad based on your script OR AI Product Commercial":"உங்கள் Script அடிப்படையிலான AI Presenter விளம்பரம் அல்லது AI Product Commercial","Basic voice-over / Sinhala dialogue as needed":"தேவைக்கேற்ப அடிப்படை Voice-over / சிங்கள உரையாடல்","Basic editing, BGM/SFX and simple on-screen text":"அடிப்படை Editing, BGM/SFX மற்றும் திரை எழுத்துகள்","One format: 9:16 or 16:9":"ஒரு Video Format: 9:16 அல்லது 16:9","1 round of minor revisions":"ஒரு சுற்று சிறிய திருத்தங்கள்","Delivery in 1–2 working days":"1–2 வேலை நாட்களில் வழங்கப்படும்","Choose Starter":"Starter-ஐத் தேர்ந்தெடுக்கவும்",
+      "AI Presenter Ad OR AI Product Commercial":"AI Presenter விளம்பரம் அல்லது AI Product Commercial","Sinhala dialogue and voice-over as needed":"தேவைக்கேற்ப சிங்கள உரையாடல் மற்றும் Voice-over","Motion graphics and text animations":"Motion Graphics மற்றும் Text Animations","Background music, sound effects and colour grading":"பின்னணி இசை, ஒலி விளைவுகள் மற்றும் Colour Grading","Brand-customized presenter / scene setup":"உங்கள் பிராண்டிற்கேற்ற Presenter / Scene","Choose Boost":"Boost-ஐத் தேர்ந்தெடுக்கவும்",
+      "AI Presenter + multiple custom AI scenes":"AI Presenter மற்றும் பல தனிப்பயன் AI காட்சிகள்","Advanced motion graphics and cinematic editing":"Advanced Motion Graphics மற்றும் Cinematic Editing","Script in Sinhala or your chosen language, approved before production":"சிங்களம் அல்லது நீங்கள் தேர்ந்தெடுக்கும் மொழியில் Script; தயாரிப்புக்கு முன் ஒப்புதல்","1 round of minor final-video revisions after script approval":"Script ஒப்புதலுக்குப் பிறகு இறுதி வீடியோவில் ஒரு சுற்று சிறிய திருத்தங்கள்","Caption, CTA, hashtags and post copy":"Caption, CTA, Hashtags மற்றும் Post Copy","Audience research, campaign setup, 7-day monitoring and basic optimization":"Audience Research, Campaign Setup, 7 நாள் Monitoring மற்றும் அடிப்படை Optimization","Estimated delivery: 5–7 working days":"எதிர்பார்க்கப்படும் வழங்கல்: 5–7 வேலை நாட்கள்","Choose VIBE PRO":"VIBE PRO-ஐத் தேர்ந்தெடுக்கவும்",
+      "Full cinematic story with multiple characters and dialogue":"பல கதாபாத்திரங்கள் மற்றும் உரையாடல்களுடன் முழு சினிமா கதை","Dramatic scenes, hero entries and product hero reveal":"Dramatic Scenes, Hero Entries மற்றும் Product Hero Reveal","Concept can come from you OR be created by VIBE ADS":"உங்கள் கதையிலிருந்து அல்லது VIBE ADS உருவாக்கும் புதிய Concept","Custom AI film scenes and premium product showcase":"தனிப்பயன் AI திரைப்படக் காட்சிகள் மற்றும் Premium Product Showcase","Advanced cinematic sound design and editing":"மேம்பட்ட Cinematic Sound Design மற்றும் Editing","All VIBE PRO social copy and 7-day campaign support":"VIBE PRO-வின் அனைத்து Social Copy மற்றும் 7 நாள் Campaign ஆதரவு","Create My Film":"என் Film-ஐ உருவாக்குங்கள்",
+      "Important:":"முக்கியம்:","Each package includes one video format. The second format is an additional service. VIBE PRO and VIBE CINEMA campaign ad spend is separate from the package price. Campaign setup and results depend on platform review, audience, creative and budget; reach or sales are not guaranteed.":"ஒவ்வொரு தொகுப்பிலும் ஒரு Video Format அடங்கும். இரண்டாவது Format-க்கு கூடுதல் கட்டணம் உண்டு. VIBE PRO மற்றும் VIBE CINEMA விளம்பரச் செலவு தொகுப்பு விலையில் சேர்க்கப்படவில்லை. Reach அல்லது Sales உறுதி செய்யப்படாது.",
+      "Built Around Your Brand":"உங்கள் பிராண்டிற்கேற்ப","Your business. Your message.":"உங்கள் வணிகம். உங்கள் செய்தி.","Your VIBE.":"உங்கள் VIBE.","Whether you sell products, offer a service, run a shop or manage a growing company, we shape the ad around your audience and what you want people to do next.":"நீங்கள் தயாரிப்புகள் விற்றாலும், சேவை வழங்கினாலும் அல்லது நிறுவனத்தை நடத்தினாலும், உங்கள் பார்வையாளர்கள் மற்றும் இலக்கிற்கு ஏற்ப விளம்பரத்தை உருவாக்குகிறோம்.","Compare Packages":"தொகுப்புகளை ஒப்பிடுங்கள்","Made for modern marketing":"நவீன Marketing-க்காக","AI presenter and product commercials":"AI Presenter மற்றும் Product Commercials","Brand-specific scenes and messaging":"பிராண்டிற்கேற்ற காட்சிகள் மற்றும் செய்திகள்","Vertical and landscape delivery options":"செங்குத்து மற்றும் கிடைமட்ட வீடியோ விருப்பங்கள்","Optional campaign setup support":"விருப்ப Campaign Setup ஆதரவு","Script approval before premium production":"Premium தயாரிப்புக்கு முன் Script ஒப்புதல்","Clear scope and revision limits":"தெளிவான சேவை மற்றும் திருத்த வரம்புகள்",
+      "Simple Process":"எளிய செயல்முறை","From idea to":"யோசனையிலிருந்து","ad-ready video.":"விளம்பரத்திற்குத் தயாரான வீடியோ வரை.","A clear process helps keep the creative aligned with your brand and campaign goals.":"தெளிவான செயல்முறை உங்கள் பிராண்ட் மற்றும் Campaign இலக்குகளுடன் படைப்பை ஒத்திசைக்கிறது.","Choose your package":"தொகுப்பைத் தேர்ந்தெடுக்கவும்","Pick the package, video format and any campaign support you need. Tell us about your product or service.":"தொகுப்பு, வீடியோ Format மற்றும் தேவையான Campaign ஆதரவைத் தேர்ந்தெடுத்து உங்கள் தயாரிப்பு அல்லது சேவையைப் பற்றி கூறுங்கள்.","Approve the direction":"கருத்தை ஒப்புதல் அளிக்கவும்","For VIBE PRO and CINEMA, we prepare the script or concept for your approval before production starts.":"VIBE PRO மற்றும் CINEMA-க்கு தயாரிப்புக்கு முன் Script அல்லது Concept ஒப்புதலுக்காக வழங்கப்படும்.","Production & delivery":"தயாரிப்பு மற்றும் வழங்கல்","We create and edit your video, apply the included revision scope and deliver the agreed format.":"வீடியோ உருவாக்கப்பட்டு Edit செய்து, ஒப்புக்கொண்ட திருத்தங்களுடன் வழங்கப்படும்.",
+      "Client Feedback":"வாடிக்கையாளர் கருத்துகள்","What customers":"வாடிக்கையாளர்கள்","have shared.":"பகிர்ந்தவை.","Reviews retained from the existing VIBE ADS website.":"முந்தைய VIBE ADS இணையதளத்தின் Reviews பாதுகாக்கப்பட்டுள்ளன.","Show more reviews":"மேலும் கருத்துகள்","Quick Answers":"விரைவான பதில்கள்","Good to":"தெரிந்துகொள்ள","know.":"வேண்டியது.","Does the package include the Facebook/Instagram ad budget?":"Facebook/Instagram விளம்பரச் செலவு தொகுப்பில் உள்ளதா?","No. For VIBE PRO and VIBE CINEMA, campaign setup and 7-day monitoring are included, but the amount paid to Meta for ad delivery is separate and agreed with you.":"இல்லை. VIBE PRO மற்றும் CINEMA-வில் Campaign Setup மற்றும் 7 நாள் Monitoring அடங்கும். Meta-விற்கு செலுத்தும் விளம்பரச் செலவு தனியாக நிர்ணயிக்கப்படும்.","Can I get both vertical and landscape formats?":"செங்குத்து மற்றும் கிடைமட்ட Format இரண்டும் கிடைக்குமா?","One format (9:16 or 16:9) is included per package. The second format can be added for an extra fee, confirmed before production.":"ஒரு தொகுப்பில் 9:16 அல்லது 16:9 Format ஒன்று அடங்கும். இரண்டாவது Format கூடுதல் கட்டணத்தில் கிடைக்கும்.","Can I change the script after production starts?":"தயாரிப்பு தொடங்கிய பின் Script-ஐ மாற்ற முடியுமா?","For VIBE PRO and VIBE CINEMA, the script/concept is approved before production. One round of minor final-video changes is included; a new script, new scenes or a major concept change may require an additional quote.":"VIBE PRO மற்றும் CINEMA-க்கு தயாரிப்புக்கு முன் Script/Concept ஒப்புதல் பெறப்படும். ஒரு சுற்று சிறிய திருத்தங்கள் அடங்கும்; புதிய Script அல்லது காட்சிகளுக்கு கூடுதல் கட்டணம் இருக்கலாம்.","Are views, messages or sales guaranteed?":"Views, Messages அல்லது Sales உறுதியா?","No. Advertising results vary based on the offer, creative, audience, budget, season and platform delivery. We do not promise a specific reach, message count or sales result.":"இல்லை. விளம்பர முடிவுகள் Offer, Creative, Audience, Budget மற்றும் Platform-ஐப் பொறுத்து மாறும். குறிப்பிட்ட Reach, Messages அல்லது Sales உறுதி செய்யப்படாது.","Can VIBE CINEMA use my own story idea?":"VIBE CINEMA-வில் என் கதையைப் பயன்படுத்தலாமா?","Yes. You can bring your own story or ask VIBE ADS to develop a new concept suited to your business and product.":"ஆம். உங்கள் கதையை வழங்கலாம் அல்லது உங்கள் வணிகத்திற்கேற்ற புதிய Concept-ஐ VIBE ADS உருவாக்கலாம்.",
+      "Let's Create":"உருவாக்குவோம்","Ready to make your brand the one people remember?":"மக்கள் நினைவில் நிற்கும் பிராண்டாக மாறத் தயாரா?","Choose a package and send your requirements directly to VIBE ADS on WhatsApp. We'll confirm the scope, format, timeline and any extra costs before starting.":"தொகுப்பைத் தேர்ந்தெடுத்து WhatsApp வழியாக VIBE ADS-க்கு தேவைகளை அனுப்புங்கள். தொடங்குவதற்கு முன் சேவை, Format, காலக்கெடு மற்றும் கூடுதல் செலவுகளை உறுதிப்படுத்துவோம்.","Discuss Your Project":"உங்கள் திட்டத்தைப் பற்றி பேசுங்கள்","Creative AI advertising for ambitious businesses.":"முன்னேற விரும்பும் வணிகங்களுக்கான AI விளம்பரங்கள்.","Work":"படைப்புகள்","Configure your ad":"உங்கள் விளம்பரத்தை அமைக்கவும்","WhatsApp Order":"WhatsApp ஆர்டர்","Your name / business":"உங்கள் பெயர் / வணிகம்","Business or your name":"வணிகப் பெயர் அல்லது உங்கள் பெயர்","Contact number":"தொடர்பு எண்","Package":"தொகுப்பு","Video format":"வீடியோ Format","9:16 Vertical (Reels)":"9:16 செங்குத்து (Reels)","16:9 Landscape":"16:9 கிடைமட்டம் (Landscape)","Both formats (extra fee)":"இரண்டு Format-களும் (கூடுதல் கட்டணம்)","Dialogue / script language":"உரையாடல் / Script மொழி","Sinhala":"சிங்களம் (Sinhala)","English":"ஆங்கிலம் (English)","Tamil":"தமிழ் (Tamil)","Other / mixed language":"மற்றவை / கலப்பு மொழி","Campaign support":"Campaign ஆதரவு","Video only":"வீடியோ மட்டும்","Discuss campaign support (PRO/CINEMA)":"Campaign ஆதரவைப் பேசுங்கள் (PRO/CINEMA)","Tell us about your business / idea":"உங்கள் வணிகம் / யோசனையைப் பற்றி கூறுங்கள்","Product/service, target audience, story idea, reference links…":"தயாரிப்பு/சேவை, இலக்கு வாடிக்கையாளர்கள், கதை யோசனை, Reference Links…","I have my own story / script idea":"எனது சொந்த கதை / Script யோசனை உள்ளது","Help me create the concept":"Concept உருவாக்க உதவுங்கள்","Cancel":"ரத்து செய்","Continue on WhatsApp":"WhatsApp-ல் தொடரவும்","Customer review":"வாடிக்கையாளர் கருத்து"
+    }
+  };
+
+  const overlay=document.getElementById('languageOverlay');
+  const toggle=document.getElementById('languageToggle');
+  const originalTextMap=new WeakMap();
+
+  function translateTextNodes(root, lang){
+    const dict=translations[lang]||{};
+    const walker=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        if(!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent=node.parentElement;
+        if(!parent || parent.closest('script,style,option[data-keep-original],.review-text,#languageOverlay,[data-no-translate]')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes=[];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      if(!originalTextMap.has(node)) originalTextMap.set(node, node.nodeValue);
+      const original=originalTextMap.get(node);
+      const trimmed=original.trim();
+      if(lang==='en'){
+        node.nodeValue=original;
+        return;
+      }
+      const translated=dict[trimmed];
+      if(translated!==undefined){
+        const lead=(original.match(/^\s*/)||[''])[0];
+        const tail=(original.match(/\s*$/)||[''])[0];
+        node.nodeValue=lead+translated+tail;
+      } else {
+        node.nodeValue=original;
+      }
+    });
+
+    document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(el=>{
+      if(!el.dataset.origPlaceholder) el.dataset.origPlaceholder=el.getAttribute('placeholder');
+      const orig=el.dataset.origPlaceholder;
+      if(lang==='en'){
+        el.setAttribute('placeholder', orig);
+      } else if(dict[orig]){
+        el.setAttribute('placeholder', dict[orig]);
+      }
+    });
+  }
+
+  function setLanguage(lang, closePopup=false){
+    currentLang=lang;
+    document.documentElement.lang=lang;
+    document.body.dataset.language=lang;
+
+    translateTextNodes(document.body, lang);
+    renderReviews();
+    updateSummary();
+
+    toggle.textContent='🌐 '+lang.toUpperCase();
+    toggle.setAttribute('aria-label', lang==='si'?'භාෂාව වෙනස් කරන්න':lang==='ta'?'மொழியை மாற்றவும்':'Change language');
+
+    try{localStorage.setItem('vibeAdsLanguage', lang);}catch(e){}
+    if(closePopup) overlay.classList.remove('open');
+  }
+
+  document.querySelectorAll('.lang-choice').forEach(btn=>{
+    btn.addEventListener('click',()=>setLanguage(btn.dataset.lang, true));
+  });
+
+  toggle.addEventListener('click',()=>overlay.classList.add('open'));
+  overlay.addEventListener('click',e=>{
+    if(e.target===overlay) overlay.classList.remove('open');
+  });
+
+  const saved=(()=>{try{return localStorage.getItem('vibeAdsLanguage');}catch(e){return null;}})();
+  if(saved && ['en','si','ta'].includes(saved)){
+    setLanguage(saved, false);
+  } else {
+    setLanguage('en', false);
+    overlay.classList.add('open');
+  }
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  const animateCounter = (el) => {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 2000; // milliseconds
+    const frameRate = 1000 / 60;
+    const totalFrames = duration / frameRate;
+    let frame = 0;
+    
+    const count = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const currentVal = target * progress;
+      
+      if (frame >= totalFrames) {
+        el.textContent = target.toFixed(decimals) + suffix;
+        clearInterval(count);
+      } else {
+        el.textContent = currentVal.toFixed(decimals) + suffix;
+      }
+    }, frameRate);
+  };
+
+  // Trigger animation when visible
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(stat => observer.observe(stat));
+});
+</script>
+</body>
+</html>
