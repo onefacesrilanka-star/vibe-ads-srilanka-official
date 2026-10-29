@@ -204,10 +204,8 @@
     .modal { display: none; position: fixed; inset: 0; z-index: 60; background: #000c; backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 16px; }
     .modal.open { display: flex; }
     .modal-box { width: min(650px, 100%); max-height: 92vh; overflow: auto; background: #151519; border: 1px solid #ffffff20; border-radius: 22px; padding: 24px; box-shadow: 0 30px 100px #0009; }
-    
-    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
-    .modal-head h3 { font-size: 20px; margin-bottom: 2px; }
-    .modal-head .pkg-price { color: #ffab52; font-weight: 800; font-size: 16px; }
+    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 18px; }
+    .modal-head h3 { font-size: 24px; }
     .close-btn { background: #ffffff0c; border: 1px solid var(--line); color: white; border-radius: 9px; padding: 7px 11px; cursor: pointer; }
     
     /* Order Layout Steps */
@@ -224,14 +222,14 @@
 
     /* INCLUSIONS & EXCLUSIONS Info inside Modal */
     .modal-inclusions { background: #101c14; border: 1px solid #25d36640; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
-    .modal-inclusions h5 { color: #43e47e; margin: 0 0 10px 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
-    .modal-inclusions ul { margin: 0; padding-left: 20px; color: #d6d6dc; font-size: 13px; line-height: 1.5; }
-    .modal-inclusions li { margin-bottom: 8px; }
-    
+    .modal-inclusions h5 { color: #43e47e; margin: 0 0 10px 0; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+    .modal-inclusions ul { margin: 0; padding-left: 20px; color: #d6d6dc; font-size: 12px; }
+    .modal-inclusions li { margin-bottom: 6px; }
+
     .modal-exclusions { background: #1d1414; border: 1px solid #ff555540; border-radius: 12px; padding: 15px; margin-bottom: 20px; }
-    .modal-exclusions h5 { color: #ff6b6b; margin: 0 0 10px 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
-    .modal-exclusions ul { margin: 0; padding-left: 20px; color: #d6d6dc; font-size: 13px; line-height: 1.5; }
-    .modal-exclusions li { margin-bottom: 8px; }
+    .modal-exclusions h5 { color: #ff6b6b; margin: 0 0 10px 0; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+    .modal-exclusions ul { margin: 0; padding-left: 20px; color: #d6d6dc; font-size: 12px; }
+    .modal-exclusions li { margin-bottom: 6px; }
 
     .modal-summary { margin: 17px 0; padding: 15px; border: 1px solid #ff781f50; border-radius: 12px; background: linear-gradient(135deg, #ff781f15, transparent); font-size: 13px; color: #eee; }
     .modal-summary strong { color: #fff; font-size: 15px; display: block; margin-bottom: 5px; }
@@ -282,8 +280,6 @@
       .review-grid { grid-template-columns: 1fr; }
       .review-text { min-height: 0; }
       .cta-band { padding: 28px 23px; }
-      
-      .modal-inclusions ul, .modal-exclusions ul { font-size: 12px; }
     }
     @media(max-width: 480px) {
       .pricing-grid { grid-template-columns: 1fr; gap: 23px; }
@@ -327,9 +323,45 @@
       .language-btn { padding: 9px 10px; font-size: 12px; }
       .lang-box { padding: 24px 18px; }
     }
+  
+    /* Custom Presenter / Guarantee Section */
+    .guarantee-band { border: 1px solid #ff781f50; border-radius: 20px; padding: 30px; background: linear-gradient(135deg, #17100b, #0b0b0c); margin: 60px auto; max-width: 900px; display: grid; grid-template-columns: 1fr; gap: 20px; text-align: center; position: relative; overflow: hidden; }
+    .guarantee-band::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(255,120,31,0.05) 0%, transparent 50%); pointer-events: none; }
+    .g-icon { font-size: 32px; color: var(--orange2); margin-bottom: 10px; }
+    .g-title { font-size: 20px; color: #fff; margin-bottom: 10px; }
+    .g-text { font-size: 14px; color: var(--muted); }
+    @media(min-width: 768px) { .guarantee-band { grid-template-columns: 1fr 1fr; text-align: left; } .g-item { display: flex; flex-direction: column; align-items: flex-start; } }
+
+  
+    /* Language selector */
+    .language-btn { border: 1px solid rgba(255, 255, 255, .18); background: #ffffff08; color: #fff; border-radius: 11px; padding: 10px 12px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: .2s; }
+    .language-btn:hover { border-color: #ff9b52; color: #ffb574; }
+    .lang-overlay { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(4, 4, 6, .88); backdrop-filter: blur(18px); }
+    .lang-overlay.open { display: flex; }
+    .lang-box { width: min(520px, 100%); padding: 30px; border: 1px solid #ffffff22; border-radius: 26px; background: radial-gradient(circle at 100% 0%, #ff781f20, transparent 42%), #111115; box-shadow: 0 30px 100px #000b; text-align: center; }
+    .lang-brand { font-size: 12px; letter-spacing: .2em; color: #ffab52; font-weight: 900; }
+    .lang-box h2 { font-size: clamp(26px, 5.5vw, 36px); margin: 12px 0; }
+    .lang-box > p { color: #b9b9c3; margin: 0 auto 24px; max-width: 390px; font-size: 14px; }
+    .lang-options { display: grid; grid-template-columns: 1fr; gap: 11px; }
+    .lang-choice { display: flex; align-items: center; gap: 14px; text-align: left; padding: 15px 17px; border: 1px solid #ffffff18; border-radius: 15px; background: #ffffff06; color: #fff; cursor: pointer; transition: .2s; width: 100%; }
+    .lang-choice:hover, .lang-choice:focus { border-color: #ff9b52; background: #ff781f16; transform: translateY(-1px); outline: none; }
+    .lang-symbol { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #ff781f1e; color: #ffb574; font-weight: 900; font-size: 17px; flex-shrink: 0; }
+    .lang-choice strong { display: block; font-size: 16px; }
+    .lang-choice small { display: block; color: #a6a6b1; margin-top: 2px; font-size: 12px; }
+
+    @media(max-width: 640px) {
+      .nav-actions { gap: 7px; }
+      .language-btn { padding: 9px 10px; font-size: 12px; }
+      .lang-box { padding: 24px 18px; }
+    }
+
   </style>
 </head>
 <body>
+
+  
+  </div>
+
   <!-- Top Navigation -->
   <div class="topbar">
     <div class="container nav">
@@ -346,6 +378,8 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
+        
+        
         <button class="language-btn" id="languageToggle" type="button" aria-label="Change language">🌐 EN</button>
         <a class="btn btn-primary" href="#monthly-packages">
           <span>Explore Plans</span>
@@ -367,7 +401,9 @@
           <h1>Make Your Brand <span>Impossible to Ignore.</span></h1>
           <p>From AI presenter ads to full cinematic stories and complete monthly social media management, VIBE ADS creates scroll-stopping content for businesses that want to stand out — without the complexity of a traditional shoot.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="#monthly-packages">
+            
+        <button class="language-btn" id="languageToggle" type="button" aria-label="Change language">🌐 EN</button>
+        <a class="btn btn-primary" href="#monthly-packages">
               <span>View Monthly Plans</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -532,7 +568,7 @@
               <li><i class="fa-solid fa-check"></i><span>Delivery in 1–2 working days</span></li>
             </ul>
             <button class="btn btn-ghost order-btn" data-package="VIBE STARTER" data-type="Video" data-price="2999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Starter</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -559,7 +595,7 @@
               <li><i class="fa-solid fa-check"></i><span>1 round of minor revisions</span></li>
             </ul>
             <button class="btn btn-ghost order-btn" data-package="VIBE BOOST" data-type="Video" data-price="5499">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Boost</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -588,7 +624,7 @@
               <li><i class="fa-solid fa-check"></i><span>Estimated delivery: 5–7 working days</span></li>
             </ul>
             <button class="btn btn-primary order-btn" data-package="VIBE PRO" data-type="Video" data-price="8499">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose VIBE PRO</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -617,7 +653,7 @@
               <li><i class="fa-solid fa-check"></i><span>All VIBE PRO social copy and 7-day campaign support</span></li>
             </ul>
             <button class="btn btn-primary order-btn" data-package="VIBE CINEMA" data-type="Video" data-price="11999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Create My Film</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
         </div>
@@ -660,7 +696,7 @@
               <li class="not-included"><i class="fa-solid fa-xmark"></i><span>Page management and publishing</span></li>
             </ul>
             <button class="btn btn-ghost order-btn" data-package="BRONZE MONTHLY" data-type="Monthly" data-price="9999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Bronze</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -689,7 +725,7 @@
               <li class="not-included"><i class="fa-solid fa-xmark"></i><span>Next-month marketing strategy</span></li>
             </ul>
             <button class="btn btn-ghost order-btn" data-package="SILVER MONTHLY" data-type="Monthly" data-price="14999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Silver</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -718,7 +754,7 @@
               <li><i class="fa-solid fa-check"></i><span>Platform: Facebook (TikTok/Insta extra)</span></li>
             </ul>
             <button class="btn btn-primary order-btn" data-package="GOLD MONTHLY" data-type="Monthly" data-price="17999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Gold Mastery</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
 
@@ -746,7 +782,7 @@
               <li><i class="fa-solid fa-check"></i><span>Dedicated account handling</span></li>
             </ul>
             <button class="btn btn-primary order-btn" data-package="PLATINUM MONTHLY" data-type="Monthly" data-price="24999">
-              <span>View Package Details</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Choose Platinum</span><i class="fa-solid fa-arrow-right"></i>
             </button>
           </article>
         </div>
@@ -765,7 +801,9 @@
           <span class="eyebrow">Built Around Your Brand</span>
           <h2>Your business. Your message. <span style="color:var(--orange)">Your VIBE.</span></h2>
           <p>Whether you sell products, offer a service, run a shop or manage a growing company, we shape the ad around your audience and what you want people to do next.</p>
-          <a class="btn btn-primary" href="#monthly-packages">
+          
+        <button class="language-btn" id="languageToggle" type="button" aria-label="Change language">🌐 EN</button>
+        <a class="btn btn-primary" href="#monthly-packages">
             <span>Compare Plans</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -801,6 +839,22 @@
         </div>
       </div>
     </section>
+
+    
+    <div class="container">
+      <div class="guarantee-band">
+        <div class="g-item">
+          <div class="g-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+          <div class="g-title" data-translate="g_title_1">Your Brand, Your Presenter</div>
+          <div class="g-text" data-translate="g_text_1">We can create custom AI presenters that look exactly how you want, standing right inside your shop, office, or anywhere you choose. It's 100% customized to your business environment!</div>
+        </div>
+        <div class="g-item">
+          <div class="g-icon"><i class="fa-solid fa-file-signature"></i></div>
+          <div class="g-title" data-translate="g_title_2">100% Satisfaction Guarantee</div>
+          <div class="g-text" data-translate="g_text_2">The full video will be produced ONLY after you approve the initial script and concept. You have complete control over the final outcome.</div>
+        </div>
+      </div>
+    </div>
 
     <section class="section" id="process">
       <div class="container">
@@ -913,25 +967,22 @@
       <div class="modal-head">
         <div>
           <span class="eyebrow">WhatsApp Order</span>
-          <h3 id="modalTitle">Package Details</h3>
+          <h3 id="modalTitle">Configure your plan</h3>
         </div>
         <button class="close-btn" id="closeModal" aria-label="Close">✕</button>
       </div>
-      
-      <!-- Package Info Header -->
-      <div id="selectedPackageDisplay" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ff781f50; border-radius: 12px; background: linear-gradient(135deg, #ff781f15, transparent); text-align: center;">
-          <h4 id="displayPkgName" style="color: #fff; font-size: 18px; margin: 0 0 5px 0;">VIBE STARTER</h4>
-          <div id="displayPkgPrice" style="color: #ffab52; font-weight: 800; font-size: 20px;">Rs. 2,999</div>
-      </div>
 
-      <!-- STEP 1: Details (Included/Not Included) -->
+      <!-- STEP 1: Not Included Alert (Visible First) -->
       <div id="modalStep1">
         
-        <!-- INCLUDED -->
-        <div class="modal-inclusions" id="inclusionsBox">
-          <h5 id="inclusionHeader"><i class="fa-solid fa-check-circle"></i> Included in this package</h5>
+        <!-- INCLUDED (Dynamically shown/hidden) -->
+        <div class="modal-inclusions" id="inclusionsBox" style="display: none;">
+          <h5 id="inclusionHeader"><i class="fa-solid fa-check-circle"></i> Included in Monthly Plans</h5>
           <ul id="inclusionList">
-            <!-- Dynamic Content -->
+            <li><strong>Premium Content:</strong> Creation of AI Videos & Post Designs.</li>
+            <li><strong>Page Management:</strong> Complete page handling and publishing.</li>
+            <li><strong>Lead Handling:</strong> Initial responses to customer inquiries.</li>
+            <li><strong>Targeted Ads:</strong> Precise Target Audience creation & ad setup.</li>
           </ul>
         </div>
         
@@ -939,7 +990,10 @@
         <div class="modal-exclusions">
           <h5 id="exclusionHeaderAlert"><i class="fa-solid fa-triangle-exclamation"></i> Important: Items NOT included</h5>
           <ul id="exclusionList">
-            <!-- Dynamic Content -->
+            <li><strong>Paid Ads Budget:</strong> Money paid to Meta for boosting/ads is a separate cost provided by you.</li>
+            <li><strong>Daily Inbox & Calls:</strong> Daily replies, calls, and order confirmation remain your responsibility.</li>
+            <li><strong>Photoshoots:</strong> Professional product photography is not included.</li>
+            <li><strong>Guaranteed Sales:</strong> We do not promise specific sales or profit results.</li>
           </ul>
         </div>
         
@@ -950,11 +1004,6 @@
 
       <!-- STEP 2: The Order Form (Hidden initially) -->
       <form id="orderForm" style="display: none;">
-        
-        <button type="button" id="backToDetails" class="btn btn-ghost" style="margin-bottom: 20px; padding: 8px 12px; font-size: 12px;">
-            <i class="fa-solid fa-arrow-left"></i> <span>Back to Details</span>
-        </button>
-          
         <div class="order-step">
           <h4>1. Your Details</h4>
           <div class="form-grid">
@@ -969,15 +1018,18 @@
           </div>
         </div>
 
-        <div class="order-step" style="display: none;">
+        <div class="order-step">
+          <h4>2. Package Selection</h4>
           <div class="form-grid">
             <div class="field">
+              <label for="packageType">Package Type</label>
               <select id="packageType" name="packageType">
-                <option value="Video">Video</option>
-                <option value="Monthly">Monthly</option>
+                <option value="Video">One-time Video Creation</option>
+                <option value="Monthly">Monthly Social Plan</option>
               </select>
             </div>
             <div class="field">
+              <label for="packageSelect">Package Tier</label>
               <select id="packageSelect" name="packageSelect">
                 <!-- Populated dynamically based on type -->
               </select>
@@ -986,7 +1038,7 @@
         </div>
         
         <div class="order-step">
-          <h4>2. Project Details</h4>
+          <h4>3. Project Details</h4>
           <div class="form-grid">
             <div class="field">
               <label for="formatSelect">Video format (if applicable)</label>
@@ -1013,6 +1065,10 @@
           </div>
         </div>
         
+        <div class="modal-summary" id="orderSummary">
+          <strong>Selected:</strong> VIBE STARTER · Rs. 2,999
+        </div>
+        
         <div class="modal-actions">
           <button type="button" class="btn btn-ghost" id="cancelOrder">
             <span>Cancel</span>
@@ -1026,6 +1082,7 @@
     </div>
   </div>
 
+  
   <div class="toast" id="toast" role="status"></div>
 
   <!-- Language Overlay -->
@@ -1060,52 +1117,23 @@
     </div>
   </div>
 
+
+
+
 <script>
-// Data for Packages
+// Data
 const VIDEO_PACKAGES = {
-  'VIBE STARTER': { price: 2999,
-    en_inc: ["AI Presenter Ad OR AI Product Commercial", "Basic voice-over / Sinhala dialogue", "Basic editing, BGM/SFX and simple text", "One format: 9:16 or 16:9", "1 round of minor revisions"],
-    si_inc: ["AI Presenter Ad හෝ Product Commercial වීඩියෝවක්", "මූලික හඬකැවීම් / සිංහල දෙබස්", "මූලික සංස්කරණය (Editing) සහ සරල අකුරු", "එක් Video Format එකක් (9:16 හෝ 16:9)", "සුළු සංශෝධන වටයක් (1 round of minor revisions)"],
-    ta_inc: ["AI Presenter Ad அல்லது AI Product Commercial", "அடிப்படை voice-over / சிங்கள உரையாடல்", "அடிப்படை editing, BGM/SFX மற்றும் எளிய text", "ஒரு format: 9:16 அல்லது 16:9", "ஒரு சுற்று சிறிய திருத்தங்கள்"]
-  },
-  'VIBE BOOST': { price: 5499,
-    en_inc: ["AI Presenter Ad OR AI Product Commercial", "Sinhala dialogue and voice-over", "Motion graphics and text animations", "Background music, SFX and colour grading", "Brand-customized presenter / scene setup"],
-    si_inc: ["AI Presenter Ad හෝ Product Commercial වීඩියෝවක්", "සිංහල දෙබස් සහ Voice-over", "Motion Graphics සහ Text Animations", "Background Music, Sound Effects සහ Colour Grading", "ඔබේ Brand එකට ගැළපෙන Presenter / Scene"],
-    ta_inc: ["AI Presenter Ad அல்லது AI Product Commercial", "சிங்கள உரையாடல் மற்றும் voice-over", "Motion graphics மற்றும் text animations", "பின்னணி இசை, SFX மற்றும் colour grading", "பிராண்டிற்கேற்ற presenter / scene"]
-  },
-  'VIBE PRO': { price: 8499,
-    en_inc: ["AI Presenter + multiple custom AI scenes", "Advanced motion graphics & cinematic editing", "Script approved before production", "Caption, CTA, hashtags and post copy", "Audience research & 7-day monitoring"],
-    si_inc: ["AI Presenter සහ අභිරුචි AI Scenes කිහිපයක්", "Advanced Motion Graphics සහ Cinematic Editing", "නිෂ්පාදනයට පෙර Script අනුමැතිය", "Caption, CTA, Hashtags සහ Post Copy", "Audience Research සහ දින 7ක Monitoring"],
-    ta_inc: ["AI Presenter + பல தனிப்பயன் AI காட்சிகள்", "Advanced motion graphics & cinematic editing", "தயாரிப்புக்கு முன் Script ஒப்புதல்", "Caption, CTA, hashtags மற்றும் post copy", "Audience research & 7 நாள் monitoring"]
-  },
-  'VIBE CINEMA': { price: 11999,
-    en_inc: ["Full cinematic story with multiple characters", "Dramatic scenes & product hero reveal", "Concept created by VIBE ADS or you", "Advanced cinematic sound design", "All VIBE PRO features + campaign support"],
-    si_inc: ["චරිත කිහිපයක් සහිත සම්පූර්ණ සිනමාත්මක කතාවක්", "Dramatic Scenes සහ Product Reveal", "VIBE ADS හෝ ඔබ විසින් නිර්මාණය කරන Concept එකක්", "Advanced Cinematic Sound Design", "VIBE PRO හි සියලුම පහසුකම් සහ Campaign සහාය"],
-    ta_inc: ["பல கதாபாத்திரங்களுடன் முழு சினிமா கதை", "சினிமா காட்சிகள் & தயாரிப்பு அறிமுகம்", "VIBE ADS அல்லது உங்களால் உருவாக்கப்பட்ட Concept", "மேம்பட்ட cinematic sound design", "அனைத்து VIBE PRO அம்சங்கள் + campaign ஆதரவு"]
-  }
+  'VIBE STARTER': 2999,
+  'VIBE BOOST': 5499,
+  'VIBE PRO': 8499,
+  'VIBE CINEMA': 11999
 };
 
 const MONTHLY_PACKAGES = {
-  'BRONZE MONTHLY': { price: 9999,
-    en_inc: ["8 Facebook post designs", "Product promotion content", "Promotional captions", "Monthly content plan", "Wholesale and retail content"],
-    si_inc: ["Facebook Post Designs 8ක්", "නිෂ්පාදන ප්‍රවර්ධන (Product Promotion) Content", "Promotional Captions ලබාදීම", "මාසික Content Plan එකක්", "තොග (Wholesale) සහ සිල්ලර (Retail) Content"],
-    ta_inc: ["8 Facebook post designs", "Product promotion content", "Promotional captions", "மாதாந்திர content plan", "Wholesale மற்றும் retail content"]
-  },
-  'SILVER MONTHLY': { price: 14999,
-    en_inc: ["12 Facebook post designs", "2 AI promotional videos", "Product and special-offer promotions", "Monthly content plan", "Monthly performance report"],
-    si_inc: ["Facebook Post Designs 12ක්", "AI Promotional Videos 2ක්", "නිෂ්පාදන සහ විශේෂ දීමනා (Special Offers) Content", "මාසික Content Plan එකක්", "මාසික Performance Report එකක්"],
-    ta_inc: ["12 Facebook post designs", "2 AI promotional videos", "Product மற்றும் special-offer promotions", "மாதாந்திர content plan", "மாதாந்திர performance report"]
-  },
-  'GOLD MONTHLY': { price: 17999,
-    en_inc: ["4x 1 Min AI Video Commercials", "8x Professional Creative Posts", "Full Page Management & Publishing", "Initial Messenger handling & Lead coordination", "Targeted Boosting setup & ROI Analysis"],
-    si_inc: ["විනාඩියේ සුපිරි AI Video Commercials 4ක්", "Professional Creative Posts 8ක්", "Page එක සම්පූර්ණයෙන්ම කළමනාකරණය සහ පළ කිරීම", "මූලික පාරිභෝගික පණිවිඩ වලට පිළිතුරු දීම", "නිවැරදි ඉලක්කගත පිරිසකට (Target Audience) Boosting සැකසීම සහ ROI රිපෝර්ට් එක"],
-    ta_inc: ["4x 1 Min AI Video Commercials", "8x Professional Creative Posts", "முழுமையான Page நிர்வாகம் & பதிவிடுதல்", "ஆரம்பகட்ட வாடிக்கையாளர் செய்திகளுக்கு பதிலளித்தல்", "Targeted Boosting அமைத்தல் & ROI Analysis"]
-  },
-  'PLATINUM MONTHLY': { price: 24999,
-    en_inc: ["16x Professional Creative Posts", "4x AI Video Commercials + Variations", "Full Page Management & Publishing", "Detailed monthly performance review & strategy", "Dedicated account handling & Priority support"],
-    si_inc: ["Professional Creative Posts 16ක්", "AI Video Commercials 4ක් සහ Campaign Variations", "Page එක සම්පූර්ණයෙන්ම කළමනාකරණය සහ පළ කිරීම", "මාසික Performance Review එක සහ අලුත් Strategy එක", "ඔබ වෙනුවෙන්ම වෙන්වූ සේවාවක් සහ ප්‍රමුඛ සහාය (Priority Support)"],
-    ta_inc: ["16x Professional Creative Posts", "4x AI Video Commercials + Variations", "முழுமையான Page நிர்வாகம் & பதிவிடுதல்", "விரிவான மாதாந்திர performance review & strategy", "பிரத்யேக account handling & Priority support"]
-  }
+  'BRONZE MONTHLY': 9999,
+  'SILVER MONTHLY': 14999,
+  'GOLD MONTHLY': 17999,
+  'PLATINUM MONTHLY': 24999
 };
 
 const WHATSAPP_NUMBER='94760308163';
@@ -1116,89 +1144,116 @@ const modal = document.getElementById('orderModal');
 const step1 = document.getElementById('modalStep1');
 const orderForm = document.getElementById('orderForm');
 const btnContinue = document.getElementById('continueToForm');
-const btnBack = document.getElementById('backToDetails');
 const packageType = document.getElementById('packageType');
 const packageSelect = document.getElementById('packageSelect');
 
-// Populate package select based on type (Hidden logic for form submission)
+// Populate package select based on type
 function populatePackages(type) {
   packageSelect.innerHTML = '';
   const data = type === 'Video' ? VIDEO_PACKAGES : MONTHLY_PACKAGES;
   
-  for (const [name, info] of Object.entries(data)) {
+  for (const [name, price] of Object.entries(data)) {
     const opt = document.createElement('option');
     opt.value = name;
-    opt.textContent = `${name} — Rs. ${info.price.toLocaleString('en-LK')}`;
+    opt.textContent = `${name} — Rs. ${price.toLocaleString('en-LK')}`;
+    opt.dataset.keepOriginal = "1";
     packageSelect.appendChild(opt);
   }
 }
 
+packageType.addEventListener('change', () => {
+  populatePackages(packageType.value);
+  updateSummary();
+  updateExclusionsLang(currentLang, packageType.value);
+});
+
+function getSummaryHTML(type, name, price, lang){
+  const formattedPrice = price.toLocaleString('en-LK');
+  const typeText = type === 'Monthly' ? '/ month (Monthly Plan)' : '(One-time Video)';
+  
+  if(lang === 'si'){
+    return `<strong>තෝරාගත් පැකේජය:</strong> ${name} · රු. ${formattedPrice} ${type === 'Monthly' ? '/ මාසයකට' : ''}<br>දැන්වීම් වියදම (Ad spend) සහ අමතර සේවා වෙනම ගණන් බලනු ලැබේ. (මාසික පැකේජ සඳහා මුදල අත්තිකාරම් ලෙස ගෙවිය යුතුය).`;
+  }
+  if(lang === 'ta'){
+    return `<strong>தேர்ந்தெடுக்கப்பட்ட தொகுப்பு:</strong> ${name} · ரூ. ${formattedPrice} ${type === 'Monthly' ? '/ மாதம்' : ''}<br>விளம்பரச் செலவு மற்றும் கூடுதல் சேவைகளுக்கு தனியாக கட்டணம் கணக்கிடப்படும்.`;
+  }
+  return `<strong>Selected:</strong> ${name} · Rs. ${formattedPrice} ${typeText}<br>Ad spend and extra services are quoted separately. (Monthly plans require upfront payment).`;
+}
+
+function updateSummary(){
+  const type = packageType.value;
+  const name = packageSelect.value;
+  const dict = type === 'Video' ? VIDEO_PACKAGES : MONTHLY_PACKAGES;
+  const price = dict[name] || 0;
+  
+  document.getElementById('orderSummary').innerHTML = getSummaryHTML(type, name, price, currentLang);
+}
+
 // Translations for Inclusions / Exclusions Block
-function updateDetailsDisplay(lang, type, pkgName) {
+function updateExclusionsLang(lang, type) {
+  const incBox = document.getElementById('inclusionsBox');
   const incH5 = document.getElementById('inclusionHeader');
   const incList = document.getElementById('inclusionList');
   
   const excH5 = document.getElementById('exclusionHeaderAlert');
   const excList = document.getElementById('exclusionList');
-  
   const btn = document.getElementById('continueToForm').querySelector('span');
-  const backBtn = document.getElementById('backToDetails').querySelector('span');
   
-  const dict = type === 'Video' ? VIDEO_PACKAGES : MONTHLY_PACKAGES;
-  const pkgData = dict[pkgName];
-  
-  // Set Display Header
-  document.getElementById('displayPkgName').textContent = pkgName;
-  document.getElementById('displayPkgPrice').textContent = `Rs. ${pkgData.price.toLocaleString('en-LK')} ${type === 'Monthly' ? (lang === 'si' ? '/ මාසයකට' : lang === 'ta' ? '/ மாதம்' : '/ month') : ''}`;
-
-  // Populate Inclusions Dynamically
-  let incArray = [];
-  if(lang === 'si') incArray = pkgData.si_inc;
-  else if(lang === 'ta') incArray = pkgData.ta_inc;
-  else incArray = pkgData.en_inc;
-  
-  incList.innerHTML = incArray.map(item => `<li><i class="fa-solid fa-check" style="color: var(--green); margin-right: 8px;"></i> ${item}</li>`).join('');
-
-  // Exclusions Logic
   if(type === 'Monthly') {
+      incBox.style.display = 'block';
       if(lang === 'si'){
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> මෙම මාසික පැකේජයට ඇතුළත් වන දේවල්`;
+        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> පැකේජයට ඇතුළත් වන දේවල්`;
+        incList.innerHTML = `
+          <li><strong>Premium Content:</strong> AI Videos සහ Post Designs නිර්මාණය.</li>
+          <li><strong>Page Management:</strong> Page එක සම්පූර්ණයෙන්ම කළමනාකරණය සහ පළ කිරීම.</li>
+          <li><strong>Lead Handling:</strong> මූලික පාරිභෝගික පණිවිඩ වලට පිළිතුරු දීම.</li>
+          <li><strong>Targeted Ads:</strong> නිවැරදි ඉලක්කගත පිරිසකට (Target Audience) Boosting සැකසීම.</li>
+        `;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ඇතුළත් නොවන දේවල් (ඔබ කළ යුතු දේ)`;
         excList.innerHTML = `
-          <li><strong>Paid Ads Budget:</strong> Boosting සඳහා Meta වෙත ගෙවන මුදල පැකේජයට ඇතුළත් නොවේ. (අවම වශයෙන් දින 5ක් සඳහා දිනකට $3-$4 ක Ad budget එකක් නිර්දේශ කරමු).</li>
-          <li><strong>Payment Terms:</strong> මාසික පැකේජ සඳහා සම්පූර්ණ මුදල වැඩ ආරම්භ කිරීමට පෙර අත්තිකාරම් ලෙස ගෙවිය යුතුය.</li>
+          <li><strong>Paid Ads Budget:</strong> Boosting සඳහා Meta වෙත ගෙවන මුදල පැකේජයට ඇතුළත් නොවේ.</li>
           <li><strong>Daily Calls & Sales:</strong> පාරිභෝගිකයින්ට කතා කිරීම සහ orders confirm කිරීම ඔබේ වගකීමකි.</li>
           <li><strong>Photoshoots:</strong> නිෂ්පාදන ඡායාරූපකරණය ඇතුළත් නොවේ.</li>
+          <li><strong>Guaranteed Sales:</strong> නිශ්චිත ලාභ ප්‍රමාණයක් සහතික කළ නොහැක.</li>
         `;
         btn.textContent = "තේරුම් ගත්තා, ඉදිරියට යන්න";
-        backBtn.textContent = "ආපසු";
       } else if (lang === 'ta') {
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> இந்த மாதாந்திர திட்டத்தில் உள்ளவை`;
+        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> திட்டத்தில் சேர்க்கப்பட்டுள்ளவை`;
+        incList.innerHTML = `
+          <li><strong>Premium Content:</strong> AI Videos மற்றும் Post Designs உருவாக்கம்.</li>
+          <li><strong>Page Management:</strong> முழுமையான Page நிர்வாகம் மற்றும் பதிவிடுதல்.</li>
+          <li><strong>Lead Handling:</strong> ஆரம்பகட்ட வாடிக்கையாளர் செய்திகளுக்கு பதிலளித்தல்.</li>
+          <li><strong>Targeted Ads:</strong> சரியான இலக்கு வாடிக்கையாளர்களுக்கு (Target Audience) Boosting அமைத்தல்.</li>
+        `;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> சேர்க்கப்படாதவை (உங்கள் பொறுப்புகள்)`;
         excList.innerHTML = `
-          <li><strong>Paid Ads Budget:</strong> Boosting-க்காக Meta-க்கு செலுத்தும் தொகை திட்டத்தில் சேராது. (குறைந்தபட்சம் 5 நாட்களுக்கு $3-$4/நாள் Ad budget பரிந்துரைக்கப்படுகிறது).</li>
-          <li><strong>Payment Terms:</strong> மாதாந்திர திட்டங்களுக்கு வேலை தொடங்கும் முன் முழு தொகையையும் முன்கூட்டியே செலுத்த வேண்டும்.</li>
+          <li><strong>Paid Ads Budget:</strong> Boosting-க்காக Meta-க்கு செலுத்தும் தொகை திட்டத்தில் சேராது.</li>
           <li><strong>Daily Calls & Sales:</strong> வாடிக்கையாளர்களிடம் பேசுவது மற்றும் orders உறுதி செய்வது உங்கள் பொறுப்பு.</li>
           <li><strong>Photoshoots:</strong> தயாரிப்பு புகைப்படம் எடுத்தல் சேர்க்கப்படவில்லை.</li>
+          <li><strong>Guaranteed Sales:</strong> குறிப்பிட்ட லாபத்தை உறுதி செய்ய முடியாது.</li>
         `;
         btn.textContent = "புரிந்தது, தொடரவும்";
-        backBtn.textContent = "பின் செல்லவும்";
       } else {
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> Included in this Monthly Plan`;
+        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> Included in Monthly Plans`;
+        incList.innerHTML = `
+          <li><strong>Premium Content:</strong> Creation of AI Videos & Post Designs.</li>
+          <li><strong>Page Management:</strong> Complete page handling and publishing.</li>
+          <li><strong>Lead Handling:</strong> Initial responses to customer inquiries.</li>
+          <li><strong>Targeted Ads:</strong> Precise Target Audience creation & ad setup.</li>
+        `;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> NOT Included (Your Responsibilities)`;
         excList.innerHTML = `
-          <li><strong>Paid Ads Budget:</strong> Money paid to Meta for boosting is a separate cost. (Recommended minimum ad budget is $3-$4/day for at least 5 days).</li>
-          <li><strong>Payment Terms:</strong> The full package amount must be paid upfront before work commences each month.</li>
+          <li><strong>Paid Ads Budget:</strong> Money paid to Meta for boosting is a separate cost.</li>
           <li><strong>Daily Calls & Sales:</strong> Calling customers and order confirmation remain your responsibility.</li>
           <li><strong>Photoshoots:</strong> Professional product photography is not included.</li>
+          <li><strong>Guaranteed Sales:</strong> We do not promise specific sales or profit results.</li>
         `;
         btn.textContent = "I Understand & Continue";
-        backBtn.textContent = "Back to Details";
       }
   } else {
-      // Video Packages Exclusions
+      // Video Packages
+      incBox.style.display = 'none';
       if(lang === 'si'){
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> මෙම Video පැකේජයට ඇතුළත් වන දේවල්`;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> මෙම පැකේජයට ඇතුළත් නොවන දේවල්`;
         excList.innerHTML = `
           <li><strong>Paid Ads Budget:</strong> Facebook/Instagram දැන්වීම් සඳහා Meta වෙත ගෙවන මුදල ඇතුළත් නොවේ.</li>
@@ -1207,9 +1262,7 @@ function updateDetailsDisplay(lang, type, pkgName) {
           <li><strong>Guaranteed Sales:</strong> නිශ්චිත ලාභ ප්‍රමාණයක් සහතික කළ නොහැක.</li>
         `;
         btn.textContent = "තේරුම් ගත්තා, ඉදිරියට යන්න";
-        backBtn.textContent = "ආපසු";
       } else if (lang === 'ta') {
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> இந்த Video திட்டத்தில் உள்ளவை`;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> திட்டத்தில் சேர்க்கப்படாதவை`;
         excList.innerHTML = `
           <li><strong>Paid Ads Budget:</strong> Facebook/Instagram விளம்பரங்களுக்காக Meta-க்கு செலுத்தும் தொகை திட்டத்தில் சேராது.</li>
@@ -1218,9 +1271,7 @@ function updateDetailsDisplay(lang, type, pkgName) {
           <li><strong>Guaranteed Sales:</strong> குறிப்பிட்ட விற்பனை அல்லது லாபத்தை உறுதி செய்ய முடியாது.</li>
         `;
         btn.textContent = "புரிந்தது, தொடரவும்";
-        backBtn.textContent = "பின் செல்லவும்";
       } else {
-        incH5.innerHTML = `<i class="fa-solid fa-check-circle"></i> Included in this Video Package`;
         excH5.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Important: Items NOT included`;
         excList.innerHTML = `
           <li><strong>Paid Ads Budget:</strong> Money paid to Meta for boosting/ads is a separate cost provided by you.</li>
@@ -1229,7 +1280,6 @@ function updateDetailsDisplay(lang, type, pkgName) {
           <li><strong>Guaranteed Sales:</strong> We do not promise specific sales or profit results.</li>
         `;
         btn.textContent = "I Understand & Continue";
-        backBtn.textContent = "Back to Details";
       }
   }
 }
@@ -1238,15 +1288,13 @@ function openOrder(name = 'VIBE STARTER', type = 'Video'){
   // Reset view to Step 1
   step1.style.display = 'block';
   orderForm.style.display = 'none';
-  document.getElementById('selectedPackageDisplay').style.display = 'block';
-  document.getElementById('modalTitle').textContent = currentLang === 'si' ? 'පැකේජ් විස්තර' : currentLang === 'ta' ? 'தொகுப்பு விவரங்கள்' : 'Package Details';
   
-  // Set internal form values
+  // Set values
   packageType.value = type;
   populatePackages(type);
   packageSelect.value = name;
-  
-  updateDetailsDisplay(currentLang, type, name);
+  updateSummary();
+  updateExclusionsLang(currentLang, type);
   
   modal.classList.add('open');
   document.body.style.overflow='hidden';
@@ -1254,16 +1302,7 @@ function openOrder(name = 'VIBE STARTER', type = 'Video'){
 
 btnContinue.addEventListener('click', () => {
   step1.style.display = 'none';
-  document.getElementById('selectedPackageDisplay').style.display = 'none';
-  document.getElementById('modalTitle').textContent = currentLang === 'si' ? 'ඔබේ විස්තර ලබාදෙන්න' : currentLang === 'ta' ? 'உங்கள் விவரங்கள்' : 'Enter Your Details';
   orderForm.style.display = 'block';
-});
-
-btnBack.addEventListener('click', () => {
-  orderForm.style.display = 'none';
-  step1.style.display = 'block';
-  document.getElementById('selectedPackageDisplay').style.display = 'block';
-  document.getElementById('modalTitle').textContent = currentLang === 'si' ? 'පැකේජ් විස්තර' : currentLang === 'ta' ? 'தொகுப்பு விவரங்கள்' : 'Package Details';
 });
 
 function closeOrder(){
@@ -1280,7 +1319,7 @@ document.querySelectorAll('.order-btn').forEach(btn => {
 document.getElementById('generalOrder').addEventListener('click',()=>openOrder('VIBE CINEMA', 'Video'));
 document.getElementById('closeModal').addEventListener('click',closeOrder);
 document.getElementById('cancelOrder').addEventListener('click',closeOrder);
-
+packageSelect.addEventListener('change',updateSummary);
 modal.addEventListener('click',e=>{if(e.target===modal)closeOrder()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOrder()});
 
@@ -1290,7 +1329,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const type = packageType.value;
   const name = packageSelect.value;
   const dict = type === 'Video' ? VIDEO_PACKAGES : MONTHLY_PACKAGES;
-  const price = dict[name].price || 0;
+  const price = dict[name] || 0;
   
   const fields={
     customer:document.getElementById('customerName').value.trim(),
@@ -1304,26 +1343,17 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   
   let msg=`👋 *Hi VIBE ADS!* 
 
-` +
-        `💬 *I'd like to discuss a ${typeLabel}.*
+💬 *I'd like to discuss a ${typeLabel}.*
 
-` +
-        `👤 *Business / Name:* ${fields.customer}
-` +
-        `📞 *Contact number:* ${fields.phone||'Not provided'}
-` +
-        `📦 *Selected Package:* ${name}
-` +
-        `💰 *Package Price:* Rs. ${price.toLocaleString('en-LK')} ${type==='Monthly' ? '/ month' : ''}
-` +
-        `📐 *Video Format:* ${fields.format}
-` +
-        `🌐 *Script/Content Language:* ${fields.language}
-` +
-        `📝 *Project Details:* ${fields.brief||'Will discuss on WhatsApp'}
+👤 *Business / Name:* ${fields.customer}
+📞 *Contact number:* ${fields.phone||'Not provided'}
+📦 *Selected Package:* ${name}
+💰 *Package Price:* Rs. ${price.toLocaleString('en-LK')} ${type==='Monthly' ? '/ month' : ''}
+📐 *Video Format:* ${fields.format}
+🌐 *Script/Content Language:* ${fields.language}
+📝 *Project Details:* ${fields.brief||'Will discuss on WhatsApp'}
 
-` +
-        `📌 *I understand that Meta ad spend is separate, you do not guarantee specific sales, and monthly packages require upfront payment.*`;
+📌 *I understand that Meta ad spend is separate, you do not guarantee specific sales, and monthly packages require upfront payment.*`;
 
   window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank','noopener');
   closeOrder();
@@ -1400,7 +1430,7 @@ renderReviews();
       "Premium AI ad production plus campaign setup and 7-day support.":"Premium AI දැන්වීම් නිෂ්පාදනය සමඟ Campaign Setup සහ දින 7ක සහාය.",
       "A full cinematic film-style advertisement built to make your product the hero.":"ඔබේ නිෂ්පාදනය ප්‍රධාන කර පෙන්වන සම්පූර්ණ සිනමාත්මක Film දැන්වීමක්.",
       "MOST POPULAR":"ජනප්‍රියම පැකේජය","EXCLUSIVE CINEMATIC":"විශේෂ සිනමා පැකේජය","Everything in Pro":"Pro හි සියල්ල","Everything in Pro, plus":"Pro හි සියල්ලට අමතරව","Special package":"විශේෂ පැකේජය","CINEMA OFFER":"CINEMA විශේෂ මිල",
-      "View Package Details":"පැකේජ් විස්තර බලන්න",
+      "Choose Starter":"Starter තෝරන්න","Choose Boost":"Boost තෝරන්න","Choose VIBE PRO":"VIBE PRO තෝරන්න","Create My Film":"මගේ Film එක හදන්න",
       "🔥 BEST VALUE FOR MONEY":"🔥 වටිනාකමට උපරිම ප්‍රතිලාභ",
       "Monthly Social Media Mastery":"මාසික Social Media පැකේජ්",
       "Consistent, high-quality content and page management to keep your business active and growing online every month.":"ඔබේ ව්‍යාපාරය අන්තර්ජාලය තුළ අඛණ්ඩව වර්ධනය කිරීම සඳහා උසස් තත්ත්වයේ Content සහ Page කළමනාකරණය මාසිකව ලබාදීම.",
@@ -1414,6 +1444,7 @@ renderReviews();
       "Everything in Silver, plus":"Silver හි සියල්ලට අමතරව",
       "Everything in Gold, plus":"Gold හි සියල්ලට අමතරව",
       "Monthly Deliverables & Management":"මාසික නිර්මාණ සහ කළමනාකරණය",
+      "Choose Bronze":"Bronze තෝරන්න","Choose Silver":"Silver තෝරන්න","Choose Gold Mastery":"Gold Mastery තෝරන්න","Choose Platinum":"Platinum තෝරන්න",
       "Important (Monthly Plans):":"වැදගත් (මාසික පැකේජ් සඳහා):",
       "The package fee covers Vibe Ads management and creation services. Facebook / Instagram advertising spend paid to Meta is ":"මෙම මුදල Vibe Ads සේවාවන් සඳහා පමණි. Facebook/Instagram Boosting සඳහා Meta වෙත ගෙවන මුදල ",
       "not included":"ඇතුළත් නොවේ.",
@@ -1426,18 +1457,7 @@ renderReviews();
       "Let's Create":"අපි නිර්මාණය කරමු","Ready to make your brand the one people remember?":"ඔබේ Brand එක මතකයේ රැඳෙන එකක් කරන්න සූදානම්ද?",
       "Choose a package and send your requirements directly to VIBE ADS on WhatsApp. We'll confirm the scope, format, timeline and any extra costs before starting.":"පැකේජයක් තෝරා ඔබේ අවශ්‍යතා WhatsApp හරහා VIBE ADS වෙත යවන්න. ආරම්භයට පෙර සේවා විස්තර, Format, කාලසීමාව සහ අමතර ගාස්තු තහවුරු කරමු.",
       "Discuss Your Project":"ඔබේ ව්‍යාපෘතිය ගැන කතා කරමු",
-      "Creative AI advertising & Social Media Mastery.":"නිර්මාණශීලී AI දැන්වීම් සහ Social Media කළමනාකරණය.",
-      "Your name / business":"ඔබේ නම / ව්‍යාපාරය",
-      "Contact number":"දුරකථන අංකය",
-      "Video format (if applicable)":"වීඩියෝ Format (අදාළ නම්)",
-      "Dialogue / script language":"දෙබස් / Script භාෂාව",
-      "Tell us about your business / idea":"ඔබේ ව්‍යාපාරය / අදහස ගැන කියන්න",
-      "Cancel":"අවලංගු කරන්න",
-      "Send on WhatsApp":"WhatsApp හරහා යවන්න",
-      "9:16 Vertical (Reels)":"9:16 සිරස් (Reels)",
-      "16:9 Landscape":"16:9 තිරස් (Landscape)",
-      "Both formats (extra fee)":"Format දෙකම (අමතර ගාස්තු)",
-      "Not applicable":"අදාළ නැත / පැකේජයට ඇතුළත් වේ"
+      "Creative AI advertising & Social Media Mastery.":"නිර්මාණශීලී AI දැන්වීම් සහ Social Media කළමනාකරණය."
     },
     ta: {
       "Our Work":"எங்கள் படைப்புகள்","Video Packages":"Video தொகுப்புகள்","Monthly Plans":"மாதாந்திர திட்டங்கள்","How It Works":"செயல்முறை","Reviews":"கருத்துகள்","FAQ":"கேள்விகள்","Explore Plans":"திட்டங்களைப் பார்க்க",
@@ -1462,7 +1482,7 @@ renderReviews();
       "Up to 40 seconds":"40 விநாடிகள் வரை","Up to 90 seconds":"90 விநாடிகள் வரை","Up to 3 minutes · Full HD 1080p":"3 நிமிடங்கள் வரை · Full HD 1080p","3 minutes+ · Full HD 1080p":"3 நிமிடங்கள்+ · Full HD 1080p",
       "MOST POPULAR":"மிகவும் பிரபலமானது","EXCLUSIVE CINEMATIC":"சிறப்பு சினிமா தொகுப்பு",
       "Everything in Pro":"Pro-வில் உள்ள அனைத்தும்","Everything in Pro, plus":"Pro-வில் உள்ள அனைத்துடன்",
-      "View Package Details":"தொகுப்பு விவரங்களை காண்க",
+      "Choose Starter":"Starter-ஐத் தேர்ந்தெடுக்கவும்","Choose Boost":"Boost-ஐத் தேர்ந்தெடுக்கவும்","Choose VIBE PRO":"VIBE PRO-ஐத் தேர்ந்தெடுக்கவும்","Create My Film":"என் Film-ஐ உருவாக்குங்கள்",
       "🔥 BEST VALUE FOR MONEY":"🔥 சிறந்த மதிப்பு",
       "Monthly Social Media Mastery":"மாதாந்திர Social Media திட்டங்கள்",
       "Consistent, high-quality content and page management to keep your business active and growing online every month.":"ஒவ்வொரு மாதமும் உங்கள் வணிகத்தை ஆன்லைனில் சுறுசுறுப்பாகவும் வளரவும் செய்ய உயர்தர Content மற்றும் Page நிர்வாகம்.",
@@ -1472,26 +1492,16 @@ renderReviews();
       "Everything in Silver, plus":"Silver-ல் உள்ள அனைத்துடன்",
       "Everything in Gold, plus":"Gold-ல் உள்ள அனைத்துடன்",
       "Monthly Deliverables & Management":"மாதாந்திர படைப்புகள் & நிர்வாகம்",
+      "Choose Bronze":"Bronze-ஐத் தேர்ந்தெடுக்கவும்","Choose Silver":"Silver-ஐத் தேர்ந்தெடுக்கவும்","Choose Gold Mastery":"Gold Mastery-ஐத் தேர்ந்தெடுக்கவும்","Choose Platinum":"Platinum-ஐத் தேர்ந்தெடுக்கவும்",
       "Important (Monthly Plans):":"முக்கியம் (மாதாந்திர திட்டங்கள்):",
       "The package fee covers Vibe Ads management and creation services. Facebook / Instagram advertising spend paid to Meta is ":"இந்த கட்டணம் Vibe Ads சேவைகளுக்கானது. Facebook/Instagram விளம்பரச் செலவு ",
       "not included":"இதில் சேராது.",
-      " (Recommended minimum ad budget is $3-$4/day for at least 5 days). The full package amount must be paid upfront before work commences each month. Sales or specific reach numbers are not guaranteed.":" (குறைந்தபட்சம் 5 நாட்களுக்கு $3-$4/நாள் Ad budget பரிந்துரைக்கப்படுகிறது). ஒவ்வொரு மாதமும் வேலை தொடங்கும் முன் முழு தொகையையும் முன்கூட்டியே செலுத்த வேண்டும். விற்பனை உத்தரவாதம் இல்லை.",
-      "Your name / business":"உங்கள் பெயர் / வணிகம்",
-      "Contact number":"தொடர்பு எண்",
-      "Video format (if applicable)":"வீடியோ Format (பொருந்தினால்)",
-      "Dialogue / script language":"உரையாடல் / Script மொழி",
-      "Tell us about your business / idea":"உங்கள் வணிகம் / யோசனையைப் பற்றி கூறுங்கள்",
-      "Cancel":"ரத்து செய்",
-      "Send on WhatsApp":"WhatsApp-ல் அனுப்புங்கள்",
-      "9:16 Vertical (Reels)":"9:16 செங்குத்து (Reels)",
-      "16:9 Landscape":"16:9 கிடைமட்டம் (Landscape)",
-      "Both formats (extra fee)":"இரண்டு Format-களும் (கூடுதல் கட்டணம்)",
-      "Not applicable":"பொருந்தாது / திட்டத்தில் அடங்கும்"
+      " (Recommended minimum ad budget is $3-$4/day for at least 5 days). The full package amount must be paid upfront before work commences each month. Sales or specific reach numbers are not guaranteed.":" (குறைந்தபட்சம் 5 நாட்களுக்கு $3-$4/நாள் Ad budget பரிந்துரைக்கப்படுகிறது). ஒவ்வொரு மாதமும் வேலை தொடங்கும் முன் முழு தொகையையும் முன்கூட்டியே செலுத்த வேண்டும். விற்பனை உத்தரவாதம் இல்லை."
     }
   };
 
-  const overlay=document.getElementById('languageOverlay');
-  const toggle=document.getElementById('languageToggle');
+  
+  
   const originalTextMap=new WeakMap();
 
   function translateTextNodes(root, lang){
@@ -1542,40 +1552,45 @@ renderReviews();
 
     translateTextNodes(document.body, lang);
     renderReviews();
-    
-    // Refresh modal if open
-    if (modal.classList.contains('open')) {
-       updateDetailsDisplay(lang, packageType.value, packageSelect.value);
-       document.getElementById('modalTitle').textContent = 
-           step1.style.display !== 'none' 
-           ? (lang === 'si' ? 'පැකේජ් විස්තර' : lang === 'ta' ? 'தொகுப்பு விவரங்கள்' : 'Package Details')
-           : (lang === 'si' ? 'ඔබේ විස්තර ලබාදෙන්න' : lang === 'ta' ? 'உங்கள் விவரங்கள்' : 'Enter Your Details');
+    updateSummary();
+    updateExclusionsLang(lang, packageType.value);
+
+    const toggle=document.getElementById('languageToggle');
+    if(toggle) {
+        toggle.textContent='🌐 '+lang.toUpperCase();
+        toggle.setAttribute('aria-label', lang==='si'?'භාෂාව වෙනස් කරන්න':lang==='ta'?'மொழியை மாற்றவும்':'Change language');
     }
 
-    toggle.textContent='🌐 '+lang.toUpperCase();
-    toggle.setAttribute('aria-label', lang==='si'?'භාෂාව වෙනස් කරන්න':lang==='ta'?'மொழியை மாற்றவும்':'Change language');
-
     try{localStorage.setItem('vibeAdsLanguage', lang);}catch(e){}
-    if(closePopup) overlay.classList.remove('open');
+    
+    if(closePopup) {
+        const overlay = document.getElementById('languageOverlay');
+        if(overlay) overlay.classList.remove('open');
+    }
   }
 
   document.querySelectorAll('.lang-choice').forEach(btn=>{
     btn.addEventListener('click',()=>setLanguage(btn.dataset.lang, true));
   });
 
-  toggle.addEventListener('click',()=>overlay.classList.add('open'));
-  overlay.addEventListener('click',e=>{
-    if(e.target===overlay) overlay.classList.remove('open');
-  });
+  const overlay=document.getElementById('languageOverlay');
+  const toggle=document.getElementById('languageToggle');
+  if(toggle && overlay) {
+      toggle.addEventListener('click',()=>overlay.classList.add('open'));
+      overlay.addEventListener('click',e=>{
+        if(e.target===overlay) overlay.classList.remove('open');
+      });
+  }
 
   const saved=(()=>{try{return localStorage.getItem('vibeAdsLanguage');}catch(e){return null;}})();
   if(saved && ['en','si','ta'].includes(saved)){
     setLanguage(saved, false);
   } else {
-    setLanguage('en', false);
-    overlay.classList.add('open');
+    setLanguage('si', false);
+    if(overlay) overlay.classList.add('open');
   }
 })();
+
 // Stats Counter Animation
 document.addEventListener("DOMContentLoaded", () => {
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -1614,7 +1629,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   statNumbers.forEach(stat => observer.observe(stat));
 });
-
 </script>
 </body>
 </html>
